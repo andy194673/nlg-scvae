@@ -15,16 +15,16 @@ res=./scvae.res
 
 bleu=./scvae.bleu
 
-<TRAIN>
+TRAIN
 
 python3 train.py --model_path=$model_path > $log
 
 
-<TEST>
+TEST
 
 python3 test.py --model_path=$model_path > $res
 
 
-<BLEU>
+BLEU
 
 python3 score_on_res.py $res 1 > $bleu
