@@ -7,6 +7,10 @@ Paper: https://arxiv.org/abs/1812.08879
 
 See run-example.sh or use the following commands for quick start
 
+An pre-trained model on all domains is stored in checkpoints/example/cvae_domain-all/
+
+The training log is at log/example, generation result is at res/example/ and bleu result is at bleu/example
+
 model_path='scvae'
 
 log=./scvae.log
