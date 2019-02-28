@@ -13,9 +13,28 @@ sys.path.insert(0, '/home/dial/bht26/Cam-research/Generator/utils')
 from nlp import *
 USE_CUDA = True
 
+'''
+*** important func & brief note for delexicalisation ***, andy
+possible values: ?, y/n, _
+
+DialogActParser.parse: parse dact into jsact (dict)
+	dact: inform(name='trattoria contadina';pricerange; name='a b c')
+	if keepValues: True => jsact: {'acttype': 'inform', 's2v': [('name', 'trattoria contadina'), ('pricerange', '?'), ('name', 'a b c')]}
+	if keepValues: False=> jsact: {'s2v': [('name', '_'), ('pricerange', '?'), ('name', '_')], 'acttype': 'inform'}
+
+ExactMatchDataLexicaliser.delexicalise: do delex, considering mutations like 'A and B' and 'B and A'
+
+SoftDActFormatter.format: turn dact into feat considering order of same slots
+	feat: [('a', 'inform'), ('name', '_1'), ('name', '_2'), ('pricerange', '?')]
+
+self.cardinality: a list of token in feat_template
+self.dfs: counts # of tokens for getting index in the feat vector
+in domain4 dataset: [0, 15, 134, 42, 9] for # of [dump, a, sv, s, v]
+self.dfs is accumulated list of it: [0, 15, 149, 191, 200]
+'''
 
 class Dataset(object):
-	def __init__(self, batch_size=64, shuffle=True, percentage=1.0, shot_on='none', verbose=1, lexCutoff=4, obj='ml'):
+	def __init__(self, batch_size=64, shuffle=True, percentage=1.0, domain='all'):
 		vocabfile = './resource/vocab.txt'
 		self.data_path = './data/domain4/original/'
 		self.batch_size = batch_size
@@ -25,11 +44,10 @@ class Dataset(object):
 		self.data   = {'train':[],'valid':[],'test':[]} 
 		self.mode   = 'train'	 # mode  for accessing data
 		self.data_index  = {'train': 0, 'valid': 0, 'test': 0}		  # index for accessing data
-		self.obj	= obj
-#		self.domain_list = ['restaurant', 'hotel', 'tv', 'laptop']
-		self.domain_list = ['restaurant']
-		assert shot_on in self.domain_list or shot_on == 'none'
-		self.shot_on = shot_on
+		self.domain_list = ['restaurant', 'hotel', 'tv', 'laptop']
+#		self.domain_list = ['restaurant']
+		assert domain in self.domain_list or domain == 'all'
+		self.domain = domain
 
 		# load vocab from file
 		self._loadVocab(vocabfile) # a list of vocab, andy
@@ -40,12 +58,6 @@ class Dataset(object):
 		self.do_size = 4
 		self.da_size = self.dfs[1] - self.dfs[0]
 		self.sv_size = self.dfs[2] - self.dfs[1]
-		# self.cardinality, a list of token in feat_template, also create self.dfs which counts # of token in feat_template, andy
-		'''
-		we have [0, 15, 134, 42, 9] for # of [dump, a, sv, s, v]
-		self.dfs is accumulated list of it
-		[0, 15, 149, 191, 200], andy
-		'''
 		## init formatter/lexicaliser
 		self.formatter	  = SoftDActFormatter() # skip, andy
 		self.lexicaliser	= ExactMatchDataLexicaliser() # skip, andy
@@ -131,7 +143,7 @@ class Dataset(object):
 			dacts.append(dact)
 
 			# get condition
-			a, sv, s, v = self.genFeatVec(feat, self.cardinality,self.dfs)
+			a, sv, s, v = self.genFeatVec(feat, self.cardinality, self.dfs)
 			do_idx = self.domain_list.index(domain)
 			do_cond = [1 if i == do_idx else 0 for i in range(self.do_size)] # domain condition
 			da_idx = a[0]
@@ -207,8 +219,8 @@ class Dataset(object):
 
 
 	def delexicalise(self,sent,dact):
-		feat = self.formatter.parse(dact,keepValues=True)
-		return self.lexicaliser.delexicalise(sent,feat['s2v'])
+		feat = self.formatter.parse(dact,keepValues=True) # do DialogActParser.parse(), parse dact into dict, andy
+		return self.lexicaliser.delexicalise(sent,feat['s2v']) # do ExactMatchDataLexicaliser.delexicalise(), andy
 
 	def lexicalise(self,sent,dact):
 		feat = self.formatter.parse(dact,keepValues=True)
@@ -275,30 +287,22 @@ class Dataset(object):
 					normalize(re.sub(' [\.\?\!]$','',sent)),dact)
 			base = self.delexicalise(
 					normalize(re.sub(' [\.\?\!]$','',base)),dact)
-			feat = self.formatter.format(dact)
+			feat = self.formatter.format(dact) # do SoftDActFormatter.format()
 			container.append( [feat, dact, sent, base, domain] )
 
-			# collect da, sv for each do
-			do_idx = self.domain_list.index(domain)
-			a, sv, s, v = self.genFeatVec(feat, self.cardinality,self.dfs)
-			da_idx = a[0]
-			da_str = feat[0][1]
-			if da_idx in self.da_idx2str:
-				assert self.da_idx2str[da_idx] == da_str
-			else:
-				self.da_idx2str[da_idx] = da_str
-
-			self.do2dasv[do_idx][0].add(da_str)
-			for sv in feat[1:]:
-				self.do2dasv[do_idx][1].add(sv[0])
-
-#			if 'two computer -s fit your needs , the satellite typhon 51 with a standard battery' in ori_sent:
-#				print(ori_sent)
-#				print(sent)
-#				print(feat)
-#				print(dact)
-#				sys.exit(1)
-				
+#			# collect da, sv for each do
+#			do_idx = self.domain_list.index(domain)
+#			a, sv, s, v = self.genFeatVec(feat, self.cardinality, self.dfs)
+#			da_idx = a[0]
+#			da_str = feat[0][1]
+#			if da_idx in self.da_idx2str:
+#				assert self.da_idx2str[da_idx] == da_str
+#			else:
+#				self.da_idx2str[da_idx] = da_str
+#
+#			self.do2dasv[do_idx][0].add(da_str)
+#			for sv in feat[1:]:
+#				self.do2dasv[do_idx][1].add(sv[0])
 		'''
 		e.g. 
 		dact: inform(name='trattoria contadina';pricerange=moderate)
@@ -308,6 +312,7 @@ class Dataset(object):
 		mod base: SLOT_NAME is a nice place it is in the SLOT_PRICERANGE price range
 		feat: [('a', 'inform'), ('name', '_1'), ('pricerange', '_1')]
 		domain: 'restaurant', 'hotel', 'tv' or 'laptop'
+		a, sv, s, v: [7] [82, 101] [24, 31] [1, 1]
 		return [feat, dact, sent, base, domain]
 		andy
 		'''
@@ -317,16 +322,16 @@ class Dataset(object):
 			container = container[:int(len(container)*self.percentage)]
 
 		# k-shot learning
-		if self.shot_on != 'none' and data_type == 'train' and domain == self.shot_on:
-			print('Shot on:', self.shot_on)
-			print('Shot on:', self.shot_on, file=sys.stderr)
+		if self.domain != 'all' and data_type == 'train' and domain == self.domain:
+			print('Shot on:', self.domain)
+			print('Shot on:', self.domain, file=sys.stderr)
 			if domain == 'laptop':
 				container = container[:600]
 			else:
 				container = container[:300]
 
-		if data_type == 'test' and self.shot_on != 'none':
-			if domain != self.shot_on:
+		if data_type == 'test' and self.domain != 'all':
+			if domain != self.domain:
 				print('zero {} on test set'.format(domain))
 				print('zero {} on test set'.format(domain), file=sys.stderr)
 				container = []
@@ -391,6 +396,7 @@ class Dataset(object):
 		return word2vec
 	
 	def genFeatVec(self,feat,cardinality,dfs):
+#		print('feat:', feat)
 		a,sv,s,v = [],[],[],[]
 		a.append(cardinality.index('a.'+feat[0][-1]))
 		for item in feat[1:]:
@@ -401,10 +407,11 @@ class Dataset(object):
 				s.append(   cardinality.index('s.'+si)-dfs[2] )
 			if 'v.'+vi in cardinality:
 				v.append(   cardinality.index('v.'+vi)-dfs[3] )
-		if len(feat[1:])==0:
+		if len(feat[1:])==0: # e.g. goodbye, andy
 			sv.append(  cardinality.index('sv.NONE.NONE')-dfs[1])
 			s.append(   cardinality.index('s.NONE')-dfs[2])
 			v.append(   cardinality.index('v.NONE')-dfs[3])
+#		print(a, sv, s, v)
 		return a,sv,s,v
 
 if __name__ == '__main__':

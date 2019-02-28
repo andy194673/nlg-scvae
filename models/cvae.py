@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
-import torch.nn.functional as F
 
 from .layers.encoder import Encoder
 from .layers.decoder import Decoder
@@ -171,7 +170,7 @@ class CVAE(nn.Module):
 
 		# Clip gradient norms
 		for p in self.params:
-			_ = torch.nn.utils.clip_grad_norm(p['params'], clip)
+			_ = torch.nn.utils.clip_grad_norm_(p['params'], clip)
 
 		# Update
 		self.solver.step()
@@ -216,7 +215,7 @@ class CVAE(nn.Module):
 		self.recog_mu, self.recog_logvar = torch.split(recog_mulogvar, self.latent_size, dim=1)
 
 		# prior network
-		prior_fc = F.tanh(self.fc(conds_seq))
+		prior_fc = torch.tanh(self.fc(conds_seq))
 		prior_mulogvar = self.prior(prior_fc)
 #		prior_mulogvar = self.prior(conds_seq)
 		self.prior_mu, self.prior_logvar = torch.split(prior_mulogvar, self.latent_size, dim=1)

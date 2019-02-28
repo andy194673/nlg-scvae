@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 
 from loader.dataset import Dataset
 from loader.GentScorer import *
-from models.lm import LM
+from models.lm_deep import LM_deep
 from models.cvae import CVAE
 USE_CUDA = True
 
@@ -27,10 +27,6 @@ def _print(target, feats, scorer, dataset, da, sv, gens, n_example):
 			s = gens[gen_idx][b]
 			cnt, total, caty = scorer.scoreERR(da[b], felements, s)
 			print('Gen {}:'.format(gen_idx), s) # feed previous results
-#			if cnt != 0:
-#				print('Slot Error: {:.3f}, {:.3f} | cnt: {}, total: {}, caty: {}'.format(total/cnt, caty/cnt, cnt, total, caty))
-#			else:
-#				print('cnt == 0 | cnt: {}, total: {}, caty: {}'.format(cnt, total, caty))
 		print('--------------------------')
 	print()
 
@@ -82,21 +78,14 @@ def get_logprob(output_all, label, lengths):
 	'''
 	batch_size = output_all.size(0)
 	log_probs = F.log_softmax(output_all, dim=2)
-#	log_probs = F.softmax(output_all, dim=2)
-#	print(np.sum(log_probs[0][0].cpu().data.numpy()))
-#	sys.exit(1)
 	
 	logprob = 0
 	for b in range(batch_size):
 		log_probs_b = log_probs[b, :, :].cpu().data.numpy()
 		label_b = label[b, :].cpu().data.numpy() # 0 indicates padding
 		length_b = lengths[b]
-#		print(log_probs_b)
-#		print(label_b)
-#		sys.exit(1)
 
 		res = [log_probs_b[len_idx][word_idx] for len_idx, word_idx in enumerate(label_b)]
-#		print(res[:20])
 		logprob += sum(res[:length_b]) # only sum logrob of words before padding
 
 	return logprob
@@ -143,15 +132,11 @@ def evaluate(config, dataset, model, model_type, scorer, data_type, print_n_batc
 
 		# update loss
 		for loss_type in total_loss:
-			total_loss[loss_type] += loss[loss_type].data[0]
+			total_loss[loss_type] += loss[loss_type].item()
 
 		# evaluation
 		logprob += get_logprob(output_all, target_label, target_len)
 		wordcount += sum(target_len)
-#		print(logprob, wordcount, file=sys.stderr)
-#		ppl = math.exp(-logprob / wordcount)
-#		print('ppl:', ppl, file=sys.stderr)
-#		sys.exit(1)
 
 		# create a set for each example for collecting generated sentences
 		for b in range(batch_size):
@@ -178,8 +163,6 @@ def evaluate(config, dataset, model, model_type, scorer, data_type, print_n_batc
 	ppl = math.exp(-logprob / wordcount)
 
 	# print first few examples in the first batch
-#	print_sample(dataset, model, model_type, scorer, data_type, print_n_batch, n_example, overgen)
-#	bleu_sum = 0
 	if data_type == 'test':
 		print('Calculating bleu...', file=sys.stderr)
 		feat2content = {}
@@ -240,8 +223,8 @@ def evaluate(config, dataset, model, model_type, scorer, data_type, print_n_batc
 	for loss_type in total_loss:
 		print('{}: {:.3f}'.format(loss_type, total_loss[loss_type]), end=' | ')
 		print('{}: {:.3f}'.format(loss_type, total_loss[loss_type]), end=' | ', file=sys.stderr)
-	print('Slot error: {:.3f}, {:.3f} | Time: {:.1f}'.format(se, se2, time.time()-t))
-	print('Slot error: {:.3f}, {:.3f} | Time: {:.1f}'.format(se, se2, time.time()-t), file=sys.stderr)
+	print('Slot error: {:.3f} | Time: {:.1f}'.format(se2, time.time()-t))
+	print('Slot error: {:.3f} | Time: {:.1f}'.format(se2, time.time()-t), file=sys.stderr)
 		
 	return total_loss['rc']
 
@@ -277,7 +260,7 @@ def train_epoch(config, dataset, model, model_type, scorer):
 
 		# update loss
 		for loss_type in total_loss:
-			total_loss[loss_type] += loss[loss_type].data[0]
+			total_loss[loss_type] += loss[loss_type].item()
 
 		# update model
 		model.update(config.getfloat('MODEL', 'clip'))
@@ -300,13 +283,13 @@ def train(config, args):
 	shuffle = config.getboolean('MODEL', 'shuffle')
 #	percentage = config.getfloat('MODEL', 'percentage')
 	percentage = args.percent
-#	shot_on = config['MODEL']['shot_on']
-	shot_on = args.shot
-	dataset = Dataset(batch_size=batch_size, shuffle=shuffle, percentage=percentage, shot_on=shot_on)
+	domain = args.domain
+	dataset = Dataset(batch_size=batch_size, shuffle=shuffle, percentage=percentage, domain=domain)
 
 	# Get model hyper-parameters
 #	model_type = config['MODEL']['model_type']
 	model_type = args.model_type
+	n_layer = args.n_layer
 	print(model_type)
 	assert model_type == 'lm' or model_type == 'cvae' or model_type == 'cvae-gan'
 	dec_type = config['MODEL']['dec_type']
@@ -338,11 +321,9 @@ def train(config, args):
 	os.mkdir(model_path)
 	print('MODEL PATH:', model_path)
 	print('*************************\n')
-#	assert not os.path.isfile(model_path)
-#	sys.exit(1)
 
 	if model_type == 'lm':
-		model = LM(dec_type, hidden_size, vocab_size, d_size, dropout=dropout, lr=lr, overgen=overgen)
+		model = LM_deep(dec_type, vocab_size, vocab_size, hidden_size, d_size, n_layer=n_layer, dropout=dropout, lr=lr, overgen=overgen)
 	elif model_type == 'cvae':
 		model = CVAE(dec_type, hidden_size, vocab_size, latent_size, d_size, da_size, sv_size, std, dropout=dropout, lr=0.001, overgen=overgen)
 
@@ -359,8 +340,8 @@ def train(config, args):
 	print('Start training', file=sys.stderr)
 	while epoch < config.getint('MODEL', 'n_epochs'):
 		dataset.reset()
-		print('Epoch', epoch)
-		print('Epoch', epoch, file=sys.stderr)
+		print('Epoch', epoch, '(n_layer {})'.format(n_layer))
+		print('\nEpoch', epoch, '(n_layer {})'.format(n_layer), file=sys.stderr)
 		train_epoch(config, dataset, model, model_type, scorer)
 
 		loss = evaluate(config, dataset, model, model_type, scorer, 'valid')
@@ -380,21 +361,21 @@ def train(config, args):
 
 if __name__ == '__main__':
 	# set seed for reproducing
-	random.seed(1235)
-	torch.manual_seed(1235)
-	torch.cuda.manual_seed_all(1235)
+	random.seed(1234)
+	torch.manual_seed(1234)
+	torch.cuda.manual_seed_all(1234)
 
 	parser = argparse.ArgumentParser(description='Train dialogue generator')
 #	parser.add_argument('--config', type=str, help='configuration file')
-	parser.add_argument('--model_type', type=str, help='lm or cvae')
+	parser.add_argument('--model_type', type=str, default='cvae', help='lm or cvae')
 	parser.add_argument('--model_path', type=str, help='saved model path')
+	parser.add_argument('--n_layer', type=int, default=1, help='# of layers in LSTM')
 	parser.add_argument('--overgen', type=int, default=10, help='number of over-generated sentences')
 	parser.add_argument('--percent', type=float, default=1.0, help='percentage of training data')
-	parser.add_argument('--shot', type=str, default='none', help='do k-shot learning on which domain')
+	parser.add_argument('--domain', type=str, default='all', help='specify a certain domain for k-shot learning experiment, all means using all data')
 	args = parser.parse_args()
 
 	config = configparser.ConfigParser()
-#	config.read(args.config) # config['MODEL']['batch_size']
 	config.read('config/config.cfg')
 
 	# training

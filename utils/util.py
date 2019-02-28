@@ -6,7 +6,7 @@ USE_CUDA = True
 def sample_gaussian(mu, logvar, std):
 	assert mu.size() == logvar.size()
 	_size = logvar.size()
-	epsilon = Variable(torch.normal(means=torch.zeros(*_size), std=std))
+	epsilon = Variable(torch.normal(mean=torch.zeros(*_size), std=std))
 	std = torch.exp(0.5 * logvar)
 	if USE_CUDA:
 		epsilon = epsilon.cuda()

@@ -1,0 +1,389 @@
+restaurant train 3114
+restaurant valid 1039
+restaurant test 1039
+hotel train 3223
+hotel valid 1075
+hotel test 1075
+tv train 4221
+tv valid 1407
+tv test 1407
+laptop train 7944
+laptop valid 2649
+laptop test 2649
+cvae
+
+***** MODEL INFO *****
+WITH DOMAIN PREDICTION
+MODEL TYPE: cvae
+DECODE TYPE: sclstm
+OVERGEN: 10
+PERCENT: 1.0
+SIZE OF HIDDEN, LATENT: 128 128
+BATCH SIZE: 128
+STD: 1.0
+MODEL PATH: checkpoints/example/cross_cvae-sclstm_shot-none
+*************************
+
+Using sclstm as decoder!
+Epoch 0 (n_layer 1)
+Train Loss: rc: 4.791 | kl: 5.324 | do: 0.569 | sv: 0.198 | da: 1.138 | kl weight: 0.029 | Time: 64.5
+total: 17016.0, count: 17764.0
+valid Loss: rc: 4.290 | kl: 2.413 | do: 0.143 | sv: 0.073 | da: 0.592 | Slot error: 95.789, 84.322 | Time: 42.0
+Best loss: 4.2902, AND Save model!
+Epoch 1 (n_layer 1)
+Train Loss: rc: 3.966 | kl: 1.676 | do: 0.070 | sv: 0.063 | da: 0.260 | kl weight: 0.058 | Time: 64.6
+total: 15071.0, count: 17765.0
+valid Loss: rc: 3.628 | kl: 0.906 | do: 0.033 | sv: 0.056 | da: 0.154 | Slot error: 84.835, 73.375 | Time: 42.0
+Best loss: 3.6284, AND Save model!
+Epoch 2 (n_layer 1)
+Train Loss: rc: 3.294 | kl: 0.692 | do: 0.024 | sv: 0.054 | da: 0.089 | kl weight: 0.086 | Time: 65.6
+total: 14106.0, count: 17764.0
+valid Loss: rc: 2.920 | kl: 0.532 | do: 0.015 | sv: 0.051 | da: 0.056 | Slot error: 79.408, 68.932 | Time: 42.3
+Best loss: 2.9203, AND Save model!
+Epoch 3 (n_layer 1)
+Train Loss: rc: 2.673 | kl: 0.356 | do: 0.013 | sv: 0.050 | da: 0.042 | kl weight: 0.115 | Time: 64.7
+total: 13328.0, count: 17763.0
+valid Loss: rc: 2.460 | kl: 0.280 | do: 0.010 | sv: 0.049 | da: 0.027 | Slot error: 75.032, 64.679 | Time: 41.9
+Best loss: 2.4596, AND Save model!
+Epoch 4 (n_layer 1)
+Train Loss: rc: 2.314 | kl: 0.218 | do: 0.009 | sv: 0.048 | da: 0.025 | kl weight: 0.144 | Time: 64.6
+total: 12023.0, count: 17753.0
+valid Loss: rc: 2.192 | kl: 0.197 | do: 0.007 | sv: 0.047 | da: 0.017 | Slot error: 67.724, 58.841 | Time: 42.0
+Best loss: 2.1916, AND Save model!
+Epoch 5 (n_layer 1)
+Train Loss: rc: 2.107 | kl: 0.147 | do: 0.007 | sv: 0.046 | da: 0.016 | kl weight: 0.173 | Time: 64.8
+total: 9385.0, count: 17752.0
+valid Loss: rc: 2.028 | kl: 0.143 | do: 0.005 | sv: 0.046 | da: 0.011 | Slot error: 52.867, 45.493 | Time: 41.9
+Best loss: 2.0278, AND Save model!
+Epoch 6 (n_layer 1)
+Train Loss: rc: 1.973 | kl: 0.104 | do: 0.005 | sv: 0.045 | da: 0.011 | kl weight: 0.202 | Time: 64.2
+total: 7969.0, count: 17756.0
+valid Loss: rc: 1.920 | kl: 0.109 | do: 0.004 | sv: 0.045 | da: 0.008 | Slot error: 44.881, 38.212 | Time: 42.0
+Best loss: 1.9204, AND Save model!
+Epoch 7 (n_layer 1)
+Train Loss: rc: 1.876 | kl: 0.078 | do: 0.004 | sv: 0.044 | da: 0.008 | kl weight: 0.230 | Time: 64.9
+total: 6621.0, count: 17756.0
+valid Loss: rc: 1.838 | kl: 0.080 | do: 0.003 | sv: 0.044 | da: 0.006 | Slot error: 37.289, 31.668 | Time: 41.9
+Best loss: 1.8382, AND Save model!
+Epoch 8 (n_layer 1)
+Train Loss: rc: 1.801 | kl: 0.064 | do: 0.003 | sv: 0.044 | da: 0.006 | kl weight: 0.259 | Time: 64.6
+total: 5506.0, count: 17752.0
+valid Loss: rc: 1.774 | kl: 0.061 | do: 0.003 | sv: 0.043 | da: 0.005 | Slot error: 31.016, 26.014 | Time: 42.0
+Best loss: 1.7743, AND Save model!
+Epoch 9 (n_layer 1)
+Train Loss: rc: 1.746 | kl: 0.050 | do: 0.003 | sv: 0.043 | da: 0.005 | kl weight: 0.288 | Time: 65.3
+total: 4138.0, count: 17755.0
+valid Loss: rc: 1.729 | kl: 0.061 | do: 0.002 | sv: 0.043 | da: 0.004 | Slot error: 23.306, 18.564 | Time: 41.9
+Best loss: 1.7285, AND Save model!
+Epoch 10 (n_layer 1)
+Train Loss: rc: 1.701 | kl: 0.044 | do: 0.002 | sv: 0.042 | da: 0.004 | kl weight: 0.317 | Time: 65.0
+total: 3477.0, count: 17753.0
+valid Loss: rc: 1.693 | kl: 0.046 | do: 0.002 | sv: 0.042 | da: 0.003 | Slot error: 19.585, 15.738 | Time: 42.0
+Best loss: 1.6933, AND Save model!
+Epoch 11 (n_layer 1)
+Train Loss: rc: 1.661 | kl: 0.039 | do: 0.002 | sv: 0.041 | da: 0.003 | kl weight: 0.346 | Time: 64.3
+total: 3201.0, count: 17746.0
+valid Loss: rc: 1.656 | kl: 0.038 | do: 0.002 | sv: 0.041 | da: 0.003 | Slot error: 18.038, 14.093 | Time: 42.1
+Best loss: 1.6562, AND Save model!
+Epoch 12 (n_layer 1)
+Train Loss: rc: 1.629 | kl: 0.031 | do: 0.001 | sv: 0.041 | da: 0.003 | kl weight: 0.374 | Time: 64.8
+total: 2561.0, count: 17754.0
+valid Loss: rc: 1.627 | kl: 0.041 | do: 0.001 | sv: 0.040 | da: 0.002 | Slot error: 14.425, 11.090 | Time: 42.2
+Best loss: 1.6275, AND Save model!
+Epoch 13 (n_layer 1)
+Train Loss: rc: 1.599 | kl: 0.029 | do: 0.001 | sv: 0.040 | da: 0.002 | kl weight: 0.403 | Time: 64.7
+total: 2355.0, count: 17740.0
+valid Loss: rc: 1.614 | kl: 0.029 | do: 0.001 | sv: 0.039 | da: 0.002 | Slot error: 13.275, 10.118 | Time: 42.0
+Best loss: 1.6137, AND Save model!
+Epoch 14 (n_layer 1)
+Train Loss: rc: 1.574 | kl: 0.025 | do: 0.001 | sv: 0.039 | da: 0.002 | kl weight: 0.432 | Time: 64.5
+total: 2063.0, count: 17743.0
+valid Loss: rc: 1.589 | kl: 0.034 | do: 0.001 | sv: 0.038 | da: 0.002 | Slot error: 11.627, 8.809 | Time: 42.4
+Best loss: 1.5887, AND Save model!
+Epoch 15 (n_layer 1)
+Train Loss: rc: 1.555 | kl: 0.026 | do: 0.001 | sv: 0.038 | da: 0.002 | kl weight: 0.461 | Time: 64.9
+total: 1795.0, count: 17754.0
+valid Loss: rc: 1.577 | kl: 0.029 | do: 0.001 | sv: 0.038 | da: 0.002 | Slot error: 10.110, 7.508 | Time: 42.0
+Best loss: 1.5767, AND Save model!
+Epoch 16 (n_layer 1)
+Train Loss: rc: 1.532 | kl: 0.023 | do: 0.001 | sv: 0.037 | da: 0.001 | kl weight: 0.490 | Time: 65.2
+total: 1743.0, count: 17738.0
+valid Loss: rc: 1.561 | kl: 0.030 | do: 0.001 | sv: 0.037 | da: 0.001 | Slot error: 9.826, 7.233 | Time: 42.1
+Best loss: 1.5611, AND Save model!
+Epoch 17 (n_layer 1)
+Train Loss: rc: 1.517 | kl: 0.020 | do: 0.001 | sv: 0.036 | da: 0.001 | kl weight: 0.518 | Time: 64.6
+total: 1594.0, count: 17748.0
+valid Loss: rc: 1.546 | kl: 0.021 | do: 0.001 | sv: 0.036 | da: 0.001 | Slot error: 8.981, 6.508 | Time: 42.0
+Best loss: 1.5459, AND Save model!
+Epoch 18 (n_layer 1)
+Train Loss: rc: 1.500 | kl: 0.019 | do: 0.001 | sv: 0.035 | da: 0.001 | kl weight: 0.547 | Time: 64.8
+total: 1459.0, count: 17743.0
+valid Loss: rc: 1.531 | kl: 0.029 | do: 0.001 | sv: 0.035 | da: 0.001 | Slot error: 8.223, 6.008 | Time: 42.0
+Best loss: 1.5313, AND Save model!
+Epoch 19 (n_layer 1)
+Train Loss: rc: 1.485 | kl: 0.020 | do: 0.001 | sv: 0.035 | da: 0.001 | kl weight: 0.576 | Time: 65.3
+total: 1402.0, count: 17751.0
+valid Loss: rc: 1.524 | kl: 0.024 | do: 0.001 | sv: 0.034 | da: 0.001 | Slot error: 7.898, 5.504 | Time: 42.2
+Best loss: 1.5239, AND Save model!
+Epoch 20 (n_layer 1)
+Train Loss: rc: 1.471 | kl: 0.018 | do: 0.001 | sv: 0.034 | da: 0.001 | kl weight: 0.605 | Time: 65.1
+total: 1406.0, count: 17731.0
+valid Loss: rc: 1.513 | kl: 0.023 | do: 0.001 | sv: 0.033 | da: 0.001 | Slot error: 7.930, 5.595 | Time: 42.0
+Best loss: 1.5126, AND Save model!
+Epoch 21 (n_layer 1)
+Train Loss: rc: 1.459 | kl: 0.015 | do: 0.001 | sv: 0.033 | da: 0.001 | kl weight: 0.634 | Time: 64.6
+total: 1336.0, count: 17745.0
+valid Loss: rc: 1.505 | kl: 0.018 | do: 0.000 | sv: 0.032 | da: 0.001 | Slot error: 7.529, 5.382 | Time: 42.0
+Best loss: 1.5055, AND Save model!
+Epoch 22 (n_layer 1)
+Train Loss: rc: 1.446 | kl: 0.017 | do: 0.001 | sv: 0.032 | da: 0.001 | kl weight: 0.662 | Time: 65.5
+total: 1172.0, count: 17748.0
+valid Loss: rc: 1.495 | kl: 0.019 | do: 0.000 | sv: 0.031 | da: 0.001 | Slot error: 6.604, 4.502 | Time: 42.0
+Best loss: 1.4946, AND Save model!
+Epoch 23 (n_layer 1)
+Train Loss: rc: 1.436 | kl: 0.019 | do: 0.001 | sv: 0.031 | da: 0.001 | kl weight: 0.691 | Time: 64.5
+total: 1169.0, count: 17742.0
+valid Loss: rc: 1.486 | kl: 0.020 | do: 0.000 | sv: 0.031 | da: 0.001 | Slot error: 6.589, 4.351 | Time: 42.0
+Best loss: 1.4860, AND Save model!
+Epoch 24 (n_layer 1)
+Train Loss: rc: 1.422 | kl: 0.015 | do: 0.000 | sv: 0.030 | da: 0.001 | kl weight: 0.720 | Time: 64.0
+total: 1079.0, count: 17745.0
+valid Loss: rc: 1.481 | kl: 0.018 | do: 0.000 | sv: 0.029 | da: 0.001 | Slot error: 6.081, 4.074 | Time: 42.1
+Best loss: 1.4813, AND Save model!
+Epoch 25 (n_layer 1)
+Train Loss: rc: 1.412 | kl: 0.013 | do: 0.000 | sv: 0.029 | da: 0.001 | kl weight: 0.749 | Time: 64.1
+total: 1061.0, count: 17744.0
+valid Loss: rc: 1.480 | kl: 0.017 | do: 0.000 | sv: 0.028 | da: 0.001 | Slot error: 5.979, 4.159 | Time: 42.0
+Best loss: 1.4796, AND Save model!
+Epoch 26 (n_layer 1)
+Train Loss: rc: 1.403 | kl: 0.013 | do: 0.000 | sv: 0.028 | da: 0.001 | kl weight: 0.778 | Time: 64.3
+total: 991.0, count: 17742.0
+valid Loss: rc: 1.475 | kl: 0.015 | do: 0.000 | sv: 0.027 | da: 0.001 | Slot error: 5.586, 3.709 | Time: 42.0
+Best loss: 1.4753, AND Save model!
+Epoch 27 (n_layer 1)
+Train Loss: rc: 1.396 | kl: 0.018 | do: 0.000 | sv: 0.027 | da: 0.001 | kl weight: 0.806 | Time: 64.6
+total: 911.0, count: 17753.0
+valid Loss: rc: 1.464 | kl: 0.014 | do: 0.000 | sv: 0.027 | da: 0.000 | Slot error: 5.132, 3.290 | Time: 41.9
+Best loss: 1.4640, AND Save model!
+Epoch 28 (n_layer 1)
+Train Loss: rc: 1.387 | kl: 0.012 | do: 0.000 | sv: 0.026 | da: 0.000 | kl weight: 0.835 | Time: 64.6
+total: 958.0, count: 17741.0
+valid Loss: rc: 1.457 | kl: 0.014 | do: 0.000 | sv: 0.026 | da: 0.000 | Slot error: 5.400, 3.692 | Time: 42.0
+Best loss: 1.4574, AND Save model!
+Epoch 29 (n_layer 1)
+Train Loss: rc: 1.376 | kl: 0.016 | do: 0.000 | sv: 0.025 | da: 0.000 | kl weight: 0.864 | Time: 64.8
+total: 1074.0, count: 17740.0
+valid Loss: rc: 1.457 | kl: 0.017 | do: 0.000 | sv: 0.025 | da: 0.000 | Slot error: 6.054, 3.929 | Time: 42.0
+Best loss: 1.4571, AND Save model!
+Epoch 30 (n_layer 1)
+Train Loss: rc: 1.369 | kl: 0.010 | do: 0.000 | sv: 0.024 | da: 0.000 | kl weight: 0.893 | Time: 63.8
+total: 1017.0, count: 17745.0
+valid Loss: rc: 1.452 | kl: 0.011 | do: 0.000 | sv: 0.023 | da: 0.000 | Slot error: 5.731, 3.787 | Time: 42.1
+Best loss: 1.4518, AND Save model!
+Epoch 31 (n_layer 1)
+Train Loss: rc: 1.362 | kl: 0.015 | do: 0.000 | sv: 0.023 | da: 0.000 | kl weight: 0.922 | Time: 64.3
+total: 957.0, count: 17746.0
+valid Loss: rc: 1.449 | kl: 0.012 | do: 0.000 | sv: 0.023 | da: 0.000 | Slot error: 5.393, 3.488 | Time: 42.2
+Best loss: 1.4486, AND Save model!
+Epoch 32 (n_layer 1)
+Train Loss: rc: 1.354 | kl: 0.011 | do: 0.000 | sv: 0.022 | da: 0.000 | kl weight: 0.950 | Time: 64.9
+total: 854.0, count: 17750.0
+valid Loss: rc: 1.440 | kl: 0.012 | do: 0.000 | sv: 0.022 | da: 0.000 | Slot error: 4.811, 3.115 | Time: 42.0
+Best loss: 1.4400, AND Save model!
+Epoch 33 (n_layer 1)
+Train Loss: rc: 1.347 | kl: 0.014 | do: 0.000 | sv: 0.022 | da: 0.000 | kl weight: 0.979 | Time: 64.4
+total: 884.0, count: 17740.0
+valid Loss: rc: 1.440 | kl: 0.016 | do: 0.000 | sv: 0.021 | da: 0.000 | Slot error: 4.983, 3.258 | Time: 41.8
+Epoch 34 (n_layer 1)
+Train Loss: rc: 1.341 | kl: 0.011 | do: 0.000 | sv: 0.021 | da: 0.000 | kl weight: 1.000 | Time: 64.2
+total: 781.0, count: 17743.0
+valid Loss: rc: 1.437 | kl: 0.015 | do: 0.000 | sv: 0.020 | da: 0.000 | Slot error: 4.402, 2.801 | Time: 42.0
+Best loss: 1.4369, AND Save model!
+Epoch 35 (n_layer 1)
+Train Loss: rc: 1.335 | kl: 0.010 | do: 0.000 | sv: 0.020 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 817.0, count: 17742.0
+valid Loss: rc: 1.438 | kl: 0.015 | do: 0.000 | sv: 0.019 | da: 0.000 | Slot error: 4.605, 2.891 | Time: 42.0
+Epoch 36 (n_layer 1)
+Train Loss: rc: 1.325 | kl: 0.012 | do: 0.000 | sv: 0.019 | da: 0.000 | kl weight: 1.000 | Time: 63.9
+total: 738.0, count: 17739.0
+valid Loss: rc: 1.431 | kl: 0.014 | do: 0.000 | sv: 0.019 | da: 0.000 | Slot error: 4.160, 2.644 | Time: 45.6
+Best loss: 1.4314, AND Save model!
+Epoch 37 (n_layer 1)
+Train Loss: rc: 1.320 | kl: 0.010 | do: 0.000 | sv: 0.018 | da: 0.000 | kl weight: 1.000 | Time: 69.5
+total: 764.0, count: 17732.0
+valid Loss: rc: 1.426 | kl: 0.010 | do: 0.000 | sv: 0.018 | da: 0.000 | Slot error: 4.309, 2.724 | Time: 45.2
+Best loss: 1.4263, AND Save model!
+Epoch 38 (n_layer 1)
+Train Loss: rc: 1.314 | kl: 0.012 | do: 0.000 | sv: 0.017 | da: 0.000 | kl weight: 1.000 | Time: 67.7
+total: 727.0, count: 17745.0
+valid Loss: rc: 1.423 | kl: 0.013 | do: 0.000 | sv: 0.017 | da: 0.000 | Slot error: 4.097, 2.339 | Time: 46.4
+Best loss: 1.4234, AND Save model!
+Epoch 39 (n_layer 1)
+Train Loss: rc: 1.308 | kl: 0.010 | do: 0.000 | sv: 0.017 | da: 0.000 | kl weight: 1.000 | Time: 66.7
+total: 775.0, count: 17743.0
+valid Loss: rc: 1.416 | kl: 0.018 | do: 0.000 | sv: 0.017 | da: 0.000 | Slot error: 4.368, 2.779 | Time: 42.9
+Best loss: 1.4155, AND Save model!
+Epoch 40 (n_layer 1)
+Train Loss: rc: 1.304 | kl: 0.010 | do: 0.000 | sv: 0.016 | da: 0.000 | kl weight: 1.000 | Time: 67.4
+total: 807.0, count: 17729.0
+valid Loss: rc: 1.428 | kl: 0.011 | do: 0.000 | sv: 0.016 | da: 0.000 | Slot error: 4.552, 2.865 | Time: 44.6
+Epoch 41 (n_layer 1)
+Train Loss: rc: 1.297 | kl: 0.012 | do: 0.000 | sv: 0.015 | da: 0.000 | kl weight: 1.000 | Time: 67.2
+total: 792.0, count: 17740.0
+valid Loss: rc: 1.417 | kl: 0.016 | do: 0.000 | sv: 0.015 | da: 0.000 | Slot error: 4.464, 2.632 | Time: 42.0
+Epoch 42 (n_layer 1)
+Train Loss: rc: 1.292 | kl: 0.010 | do: 0.000 | sv: 0.015 | da: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 758.0, count: 17738.0
+valid Loss: rc: 1.417 | kl: 0.011 | do: 0.000 | sv: 0.015 | da: 0.000 | Slot error: 4.273, 2.537 | Time: 44.0
+Epoch 43 (n_layer 1)
+Train Loss: rc: 1.286 | kl: 0.013 | do: 0.000 | sv: 0.014 | da: 0.000 | kl weight: 1.000 | Time: 66.0
+total: 735.0, count: 17744.0
+valid Loss: rc: 1.419 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | Slot error: 4.142, 2.564 | Time: 42.0
+Epoch 44 (n_layer 1)
+Train Loss: rc: 1.281 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | kl weight: 1.000 | Time: 65.7
+total: 737.0, count: 17741.0
+valid Loss: rc: 1.413 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | Slot error: 4.154, 2.508 | Time: 42.0
+Best loss: 1.4130, AND Save model!
+Epoch 45 (n_layer 1)
+Train Loss: rc: 1.275 | kl: 0.010 | do: 0.000 | sv: 0.013 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 712.0, count: 17749.0
+valid Loss: rc: 1.413 | kl: 0.011 | do: 0.000 | sv: 0.013 | da: 0.000 | Slot error: 4.011, 2.406 | Time: 42.2
+Best loss: 1.4126, AND Save model!
+Epoch 46 (n_layer 1)
+Train Loss: rc: 1.272 | kl: 0.009 | do: 0.000 | sv: 0.013 | da: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 704.0, count: 17750.0
+valid Loss: rc: 1.412 | kl: 0.012 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 3.966, 2.366 | Time: 42.1
+Best loss: 1.4119, AND Save model!
+Epoch 47 (n_layer 1)
+Train Loss: rc: 1.263 | kl: 0.013 | do: 0.000 | sv: 0.012 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 728.0, count: 17728.0
+valid Loss: rc: 1.409 | kl: 0.015 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 4.106, 2.657 | Time: 42.3
+Best loss: 1.4086, AND Save model!
+Epoch 48 (n_layer 1)
+Train Loss: rc: 1.261 | kl: 0.009 | do: 0.000 | sv: 0.012 | da: 0.000 | kl weight: 1.000 | Time: 64.2
+total: 668.0, count: 17744.0
+valid Loss: rc: 1.407 | kl: 0.010 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 3.765, 2.344 | Time: 41.9
+Best loss: 1.4074, AND Save model!
+Epoch 49 (n_layer 1)
+Train Loss: rc: 1.258 | kl: 0.009 | do: 0.000 | sv: 0.011 | da: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 731.0, count: 17738.0
+valid Loss: rc: 1.410 | kl: 0.011 | do: 0.000 | sv: 0.011 | da: 0.000 | Slot error: 4.121, 2.633 | Time: 42.0
+Epoch 50 (n_layer 1)
+Train Loss: rc: 1.252 | kl: 0.009 | do: 0.000 | sv: 0.011 | da: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 719.0, count: 17745.0
+valid Loss: rc: 1.409 | kl: 0.011 | do: 0.000 | sv: 0.011 | da: 0.000 | Slot error: 4.052, 2.508 | Time: 42.0
+Epoch 51 (n_layer 1)
+Train Loss: rc: 1.247 | kl: 0.009 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 668.0, count: 17738.0
+valid Loss: rc: 1.404 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.766, 2.323 | Time: 42.0
+Best loss: 1.4039, AND Save model!
+Epoch 52 (n_layer 1)
+Train Loss: rc: 1.244 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 654.0, count: 17746.0
+valid Loss: rc: 1.410 | kl: 0.009 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.685, 2.130 | Time: 41.9
+Epoch 53 (n_layer 1)
+Train Loss: rc: 1.242 | kl: 0.010 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 678.0, count: 17738.0
+valid Loss: rc: 1.409 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.822, 2.283 | Time: 42.2
+Epoch 54 (n_layer 1)
+Train Loss: rc: 1.237 | kl: 0.010 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 601.0, count: 17735.0
+valid Loss: rc: 1.409 | kl: 0.010 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.389, 1.833 | Time: 42.0
+Epoch 55 (n_layer 1)
+Train Loss: rc: 1.233 | kl: 0.008 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 671.0, count: 17735.0
+valid Loss: rc: 1.413 | kl: 0.009 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.783, 2.176 | Time: 42.1
+Epoch 56 (n_layer 1)
+Train Loss: rc: 1.227 | kl: 0.011 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 577.0, count: 17726.0
+valid Loss: rc: 1.401 | kl: 0.013 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.255, 1.929 | Time: 42.2
+Best loss: 1.4012, AND Save model!
+Epoch 57 (n_layer 1)
+Train Loss: rc: 1.221 | kl: 0.012 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.2
+total: 633.0, count: 17742.0
+valid Loss: rc: 1.407 | kl: 0.009 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.568, 2.108 | Time: 41.9
+Epoch 58 (n_layer 1)
+Train Loss: rc: 1.222 | kl: 0.007 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.3
+total: 636.0, count: 17741.0
+valid Loss: rc: 1.407 | kl: 0.010 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.585, 2.080 | Time: 42.0
+Epoch 59 (n_layer 1)
+Train Loss: rc: 1.217 | kl: 0.010 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 575.0, count: 17742.0
+valid Loss: rc: 1.406 | kl: 0.014 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.241, 1.973 | Time: 42.1
+Epoch 60 (n_layer 1)
+Train Loss: rc: 1.214 | kl: 0.011 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.4
+total: 644.0, count: 17739.0
+valid Loss: rc: 1.403 | kl: 0.020 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.630, 2.120 | Time: 42.0
+Epoch 61 (n_layer 1)
+Train Loss: rc: 1.209 | kl: 0.012 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 588.0, count: 17747.0
+valid Loss: rc: 1.404 | kl: 0.011 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.313, 1.792 | Time: 42.1
+Epoch 62 (n_layer 1)
+Train Loss: rc: 1.204 | kl: 0.007 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 649.0, count: 17732.0
+valid Loss: rc: 1.407 | kl: 0.012 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.660, 2.047 | Time: 42.0
+Epoch 63 (n_layer 1)
+Train Loss: rc: 1.203 | kl: 0.009 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.3
+total: 662.0, count: 17746.0
+valid Loss: rc: 1.406 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.730, 2.158 | Time: 42.0
+Epoch 64 (n_layer 1)
+Train Loss: rc: 1.198 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 669.0, count: 17745.0
+valid Loss: rc: 1.409 | kl: 0.014 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.770, 2.282 | Time: 42.2
+Epoch 65 (n_layer 1)
+Train Loss: rc: 1.193 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 673.0, count: 17744.0
+valid Loss: rc: 1.408 | kl: 0.010 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.793, 2.356 | Time: 42.2
+Epoch 66 (n_layer 1)
+Train Loss: rc: 1.193 | kl: 0.008 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 66.0
+total: 631.0, count: 17737.0
+valid Loss: rc: 1.407 | kl: 0.008 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.558, 2.193 | Time: 42.0
+Epoch 67 (n_layer 1)
+Train Loss: rc: 1.188 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 555.0, count: 17740.0
+valid Loss: rc: 1.403 | kl: 0.013 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.129, 1.883 | Time: 42.2
+Epoch 68 (n_layer 1)
+Train Loss: rc: 1.184 | kl: 0.013 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 65.1
+total: 578.0, count: 17744.0
+valid Loss: rc: 1.406 | kl: 0.012 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.257, 1.854 | Time: 42.1
+Epoch 69 (n_layer 1)
+Train Loss: rc: 1.182 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.3
+total: 607.0, count: 17740.0
+valid Loss: rc: 1.409 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.422, 2.012 | Time: 42.4
+Epoch 70 (n_layer 1)
+Train Loss: rc: 1.178 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 65.5
+total: 556.0, count: 17739.0
+valid Loss: rc: 1.409 | kl: 0.011 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.134, 1.798 | Time: 42.2
+Epoch 71 (n_layer 1)
+Train Loss: rc: 1.175 | kl: 0.009 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 592.0, count: 17737.0
+valid Loss: rc: 1.412 | kl: 0.014 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.338, 2.001 | Time: 42.1
+Epoch 72 (n_layer 1)
+Train Loss: rc: 1.174 | kl: 0.012 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.4
+total: 660.0, count: 17741.0
+valid Loss: rc: 1.412 | kl: 0.010 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.720, 2.238 | Time: 42.0
+Epoch 73 (n_layer 1)
+Train Loss: rc: 1.170 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 578.0, count: 17740.0
+valid Loss: rc: 1.409 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.258, 2.012 | Time: 42.0
+Epoch 74 (n_layer 1)
+Train Loss: rc: 1.167 | kl: 0.011 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 614.0, count: 17734.0
+valid Loss: rc: 1.414 | kl: 0.010 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.462, 1.951 | Time: 42.0
+Epoch 75 (n_layer 1)
+Train Loss: rc: 1.164 | kl: 0.011 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 600.0, count: 17728.0
+valid Loss: rc: 1.412 | kl: 0.009 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.384, 1.935 | Time: 42.0
+Epoch 76 (n_layer 1)
+Train Loss: rc: 1.159 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 653.0, count: 17729.0
+valid Loss: rc: 1.412 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.683, 2.183 | Time: 42.2
+Epoch 77 (n_layer 1)
+Train Loss: rc: 1.159 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.4
+total: 646.0, count: 17750.0
+valid Loss: rc: 1.412 | kl: 0.009 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.639, 2.073 | Time: 42.2
+Epoch 78 (n_layer 1)
+Train Loss: rc: 1.156 | kl: 0.009 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 606.0, count: 17747.0
+valid Loss: rc: 1.411 | kl: 0.014 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.415, 1.950 | Time: 43.4
+Epoch 79 (n_layer 1)
