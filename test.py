@@ -56,9 +56,7 @@ def test(config, args):
 #		model = LM(dec_type, hidden_size, vocab_size, d_size, dropout=dropout, lr=lr, overgen=overgen)
 		model = LM_deep(dec_type, vocab_size, vocab_size, hidden_size, d_size, n_layer=n_layer, dropout=dropout, lr=lr, overgen=overgen)
 	elif model_type == 'cvae':
-		model = CVAE(dec_type, hidden_size, vocab_size, latent_size, d_size, da_size, sv_size, std, dropout=dropout, lr=0.001, overgen=overgen)
-	else:
-		model = CVAEGAN(dec_type, hidden_size, vocab_size, latent_size, d_size, da_size, sv_size, std, dropout=dropout, lr=lr, D_lr=D_lr, G_lr=G_lr , overgen=overgen)
+		model = CVAE(dec_type, hidden_size, vocab_size, latent_size, d_size, da_size, sv_size, std, n_layers=n_layer, dropout=dropout, lr=lr, overgen=overgen)
 
 	# load model
 #	model_path = config['MODEL']['model_path']

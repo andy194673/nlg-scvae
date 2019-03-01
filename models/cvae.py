@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 
 from .layers.encoder import Encoder
-from .layers.decoder import Decoder
+from .layers.decoder_deep import DecoderDeep
 from utils.util import sample_gaussian
 from models.masked_cross_entropy import *
 USE_CUDA = True
@@ -27,7 +27,8 @@ class CVAE(nn.Module):
 
 		# model
 		self.enc = Encoder( vocab_size, hidden_size, n_layers, dropout=dropout )
-		self.dec = Decoder(dec_type, hidden_size, vocab_size, d_size=d_size, dropout=dropout)
+#		self.dec = Decoder(dec_type, hidden_size, vocab_size, d_size=d_size, dropout=dropout)
+		self.dec = DecoderDeep(dec_type, vocab_size, vocab_size, hidden_size, d_size, n_layer=n_layers, dropout=0.5)
 
 		# cond feat transform
 		self.feat = nn.Linear(latent_size, d_size)
@@ -242,22 +243,7 @@ class CVAE(nn.Module):
 		last_hidden = z
 
 		# decoder
-		if self.dec_type == 'sclstm':
-			self.output_all, decoded_words = self.dec(target_seq, dataset, last_hidden=last_hidden, last_dt=conds_seq, gen=gen, random_sample=self.random_sample)
-		else:
-			self.output_all, decoded_words = self.dec(input_seq, dataset, last_hidden=last_hidden, gen=gen, random_sample=self.random_sample)
+#		if self.dec_type == 'sclstm':
+		self.output_all, decoded_words = self.dec(target_seq, dataset, last_hidden_t0=last_hidden, last_dt_t0=conds_seq, gen=gen, random_sample=self.random_sample)
 
 		return self.output_all, decoded_words
-
-		# TODO: n_layers > 1
-#		decoder_hidden = []
-#		for i in range(self.n_layers):
-#			decoder_hidden.append(self.linears[i](init_input).unsqueeze(0)) # (1, batch_size, hidden_size)
-#		decoder_hidden = torch.cat(decoder_hidden, dim=0) # (n_layers, batch_size, hidden_size)
-#		decoder_hidden = z.view(1, batch_size, self.hidden_size) # need to fix for n_layers > 1
-
-#		# word dropout
-#		if self.word_dropout > 0 and self.global_t > 500:
-#			decoder_input = self.dropout_on_word(decoder_input, dataset, batch_size)
-
-#		return [recog_mu, recog_logvar, prior_mu, prior_logvar], [da_output, sv_output], all_decoder_outputs, decoded_words

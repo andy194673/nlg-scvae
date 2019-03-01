@@ -71,9 +71,9 @@ class DecoderDeep(nn.Module):
 		h2h = self.h2h[layer_idx](last_hidden[layer_idx])
 		h2h = torch.split(h2h, self.hidden_size, dim=1)
 
-		gate_i = F.sigmoid(w2h[0] + h2h[0]) # (batch_size, hidden_size)
-		gate_f = F.sigmoid(w2h[1] + h2h[1])
-		gate_o = F.sigmoid(w2h[2] + h2h[2])
+		gate_i = torch.sigmoid(w2h[0] + h2h[0]) # (batch_size, hidden_size)
+		gate_f = torch.sigmoid(w2h[1] + h2h[1])
+		gate_o = torch.sigmoid(w2h[2] + h2h[2])
 
 		# updata dt
 #		alpha = 0.5
@@ -86,13 +86,13 @@ class DecoderDeep(nn.Module):
 		for i in range(self.n_layer):
 			_gate_r += alpha * self.h2h_r[i](last_hidden[i])
 #			gate_r += alpha * self.h2h_r[i](last_hidden[i])
-		gate_r = F.sigmoid(self.w2h_r[layer_idx](input_t) + _gate_r)
+		gate_r = torch.sigmoid(self.w2h_r[layer_idx](input_t) + _gate_r)
 			
 		dt = gate_r * last_dt
 
-		cell_hat = F.tanh(w2h[3] + h2h[3])
-		cell = gate_f * last_cell + gate_i * cell_hat + F.tanh( self.dc[layer_idx](dt) )
-		hidden = gate_o * F.tanh(cell)
+		cell_hat = torch.tanh(w2h[3] + h2h[3])
+		cell = gate_f * last_cell + gate_i * cell_hat + torch.tanh( self.dc[layer_idx](dt) )
+		hidden = gate_o * torch.tanh(cell)
 
 		return hidden, cell, dt
 
@@ -210,11 +210,11 @@ class DecoderDeep(nn.Module):
 		'''
 		batch_size = output.size(0)
 		if not random_sample: # take argmax directly wo sampling
-			topv, topi = F.softmax(output, dim=1).data.topk(1) # both (batch_size, 1)
+			topv, topi = torch.softmax(output, dim=1).data.topk(1) # both (batch_size, 1)
 
 		else: # sample over word distribution
 			topv, topi = [], []
-			word_dis = F.softmax(output, dim=1) # (batch_size, output_size)
+			word_dis = torch.softmax(output, dim=1) # (batch_size, output_size)
 #			print(word_dis)
 
 #			# sample over beam size distribution
@@ -250,7 +250,7 @@ class DecoderDeep(nn.Module):
 			
 		decoded_words_t = np.zeros((batch_size, self.output_size))
 		for b in range(batch_size):
-			idx = topi[b][0]
+			idx = topi[b][0].item()
 			word = dataset.index2word[idx]
 			decoded_words[b] += (word + ' ')
 			decoded_words_t[b][idx] = 1
