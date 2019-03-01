@@ -21,369 +21,382 @@ PERCENT: 1.0
 SIZE OF HIDDEN, LATENT: 128 128
 BATCH SIZE: 128
 STD: 1.0
-MODEL PATH: checkpoints/example/cross_cvae-sclstm_shot-none
+MODEL PATH: 123
 *************************
 
-Using sclstm as decoder!
+Using sclstm as decoder with module list!
+Using previous hidden for dt
 Epoch 0 (n_layer 1)
-Train Loss: rc: 4.791 | kl: 5.324 | do: 0.569 | sv: 0.198 | da: 1.138 | kl weight: 0.029 | Time: 64.5
-total: 17016.0, count: 17764.0
-valid Loss: rc: 4.290 | kl: 2.413 | do: 0.143 | sv: 0.073 | da: 0.592 | Slot error: 95.789, 84.322 | Time: 42.0
-Best loss: 4.2902, AND Save model!
+Train Loss: kl: 5.330 | sv: 0.197 | da: 1.143 | rc: 4.786 | do: 0.567 | kl weight: 0.029 | Time: 64.8
+total: 16642.0, count: 17765.0
+valid Loss: kl: 2.421 | sv: 0.074 | da: 0.603 | rc: 4.239 | do: 0.146 | Slot error: 82.212 | Time: 41.9
+Best loss: 4.2389, AND Save model!
 Epoch 1 (n_layer 1)
-Train Loss: rc: 3.966 | kl: 1.676 | do: 0.070 | sv: 0.063 | da: 0.260 | kl weight: 0.058 | Time: 64.6
-total: 15071.0, count: 17765.0
-valid Loss: rc: 3.628 | kl: 0.906 | do: 0.033 | sv: 0.056 | da: 0.154 | Slot error: 84.835, 73.375 | Time: 42.0
-Best loss: 3.6284, AND Save model!
+Train Loss: kl: 1.683 | sv: 0.063 | da: 0.264 | rc: 3.938 | do: 0.069 | kl weight: 0.058 | Time: 64.9
+total: 14232.0, count: 17765.0
+valid Loss: kl: 0.971 | sv: 0.056 | da: 0.157 | rc: 3.616 | do: 0.033 | Slot error: 68.804 | Time: 41.6
+Best loss: 3.6159, AND Save model!
 Epoch 2 (n_layer 1)
-Train Loss: rc: 3.294 | kl: 0.692 | do: 0.024 | sv: 0.054 | da: 0.089 | kl weight: 0.086 | Time: 65.6
-total: 14106.0, count: 17764.0
-valid Loss: rc: 2.920 | kl: 0.532 | do: 0.015 | sv: 0.051 | da: 0.056 | Slot error: 79.408, 68.932 | Time: 42.3
-Best loss: 2.9203, AND Save model!
+Train Loss: kl: 0.704 | sv: 0.054 | da: 0.091 | rc: 3.280 | do: 0.024 | kl weight: 0.086 | Time: 64.6
+total: 13058.0, count: 17764.0
+valid Loss: kl: 0.571 | sv: 0.051 | da: 0.057 | rc: 2.931 | do: 0.015 | Slot error: 62.745 | Time: 42.1
+Best loss: 2.9311, AND Save model!
 Epoch 3 (n_layer 1)
-Train Loss: rc: 2.673 | kl: 0.356 | do: 0.013 | sv: 0.050 | da: 0.042 | kl weight: 0.115 | Time: 64.7
-total: 13328.0, count: 17763.0
-valid Loss: rc: 2.460 | kl: 0.280 | do: 0.010 | sv: 0.049 | da: 0.027 | Slot error: 75.032, 64.679 | Time: 41.9
-Best loss: 2.4596, AND Save model!
+Train Loss: kl: 0.358 | sv: 0.050 | da: 0.043 | rc: 2.682 | do: 0.013 | kl weight: 0.115 | Time: 64.6
+total: 12027.0, count: 17761.0
+valid Loss: kl: 0.285 | sv: 0.049 | da: 0.028 | rc: 2.488 | do: 0.010 | Slot error: 57.502 | Time: 41.8
+Best loss: 2.4882, AND Save model!
 Epoch 4 (n_layer 1)
-Train Loss: rc: 2.314 | kl: 0.218 | do: 0.009 | sv: 0.048 | da: 0.025 | kl weight: 0.144 | Time: 64.6
-total: 12023.0, count: 17753.0
-valid Loss: rc: 2.192 | kl: 0.197 | do: 0.007 | sv: 0.047 | da: 0.017 | Slot error: 67.724, 58.841 | Time: 42.0
-Best loss: 2.1916, AND Save model!
+Train Loss: kl: 0.217 | sv: 0.048 | da: 0.025 | rc: 2.347 | do: 0.009 | kl weight: 0.144 | Time: 65.0
+total: 9456.0, count: 17753.0
+valid Loss: kl: 0.198 | sv: 0.047 | da: 0.017 | rc: 2.245 | do: 0.007 | Slot error: 45.080 | Time: 41.8
+Best loss: 2.2455, AND Save model!
 Epoch 5 (n_layer 1)
-Train Loss: rc: 2.107 | kl: 0.147 | do: 0.007 | sv: 0.046 | da: 0.016 | kl weight: 0.173 | Time: 64.8
-total: 9385.0, count: 17752.0
-valid Loss: rc: 2.028 | kl: 0.143 | do: 0.005 | sv: 0.046 | da: 0.011 | Slot error: 52.867, 45.493 | Time: 41.9
-Best loss: 2.0278, AND Save model!
+Train Loss: kl: 0.145 | sv: 0.046 | da: 0.016 | rc: 2.156 | do: 0.007 | kl weight: 0.173 | Time: 65.2
+total: 7434.0, count: 17750.0
+valid Loss: kl: 0.138 | sv: 0.046 | da: 0.011 | rc: 2.086 | do: 0.005 | Slot error: 34.992 | Time: 42.0
+Best loss: 2.0857, AND Save model!
 Epoch 6 (n_layer 1)
-Train Loss: rc: 1.973 | kl: 0.104 | do: 0.005 | sv: 0.045 | da: 0.011 | kl weight: 0.202 | Time: 64.2
-total: 7969.0, count: 17756.0
-valid Loss: rc: 1.920 | kl: 0.109 | do: 0.004 | sv: 0.045 | da: 0.008 | Slot error: 44.881, 38.212 | Time: 42.0
-Best loss: 1.9204, AND Save model!
+Train Loss: kl: 0.102 | sv: 0.045 | da: 0.011 | rc: 2.027 | do: 0.005 | kl weight: 0.202 | Time: 64.5
+total: 5847.0, count: 17756.0
+valid Loss: kl: 0.105 | sv: 0.045 | da: 0.008 | rc: 1.979 | do: 0.004 | Slot error: 27.044 | Time: 41.7
+Best loss: 1.9785, AND Save model!
 Epoch 7 (n_layer 1)
-Train Loss: rc: 1.876 | kl: 0.078 | do: 0.004 | sv: 0.044 | da: 0.008 | kl weight: 0.230 | Time: 64.9
-total: 6621.0, count: 17756.0
-valid Loss: rc: 1.838 | kl: 0.080 | do: 0.003 | sv: 0.044 | da: 0.006 | Slot error: 37.289, 31.668 | Time: 41.9
-Best loss: 1.8382, AND Save model!
+Train Loss: kl: 0.077 | sv: 0.044 | da: 0.008 | rc: 1.931 | do: 0.004 | kl weight: 0.230 | Time: 65.5
+total: 4509.0, count: 17758.0
+valid Loss: kl: 0.079 | sv: 0.044 | da: 0.006 | rc: 1.895 | do: 0.003 | Slot error: 20.571 | Time: 41.8
+Best loss: 1.8953, AND Save model!
 Epoch 8 (n_layer 1)
-Train Loss: rc: 1.801 | kl: 0.064 | do: 0.003 | sv: 0.044 | da: 0.006 | kl weight: 0.259 | Time: 64.6
-total: 5506.0, count: 17752.0
-valid Loss: rc: 1.774 | kl: 0.061 | do: 0.003 | sv: 0.043 | da: 0.005 | Slot error: 31.016, 26.014 | Time: 42.0
-Best loss: 1.7743, AND Save model!
+Train Loss: kl: 0.063 | sv: 0.044 | da: 0.006 | rc: 1.859 | do: 0.003 | kl weight: 0.259 | Time: 65.2
+total: 3916.0, count: 17753.0
+valid Loss: kl: 0.062 | sv: 0.043 | da: 0.005 | rc: 1.835 | do: 0.003 | Slot error: 17.670 | Time: 41.9
+Best loss: 1.8351, AND Save model!
 Epoch 9 (n_layer 1)
-Train Loss: rc: 1.746 | kl: 0.050 | do: 0.003 | sv: 0.043 | da: 0.005 | kl weight: 0.288 | Time: 65.3
-total: 4138.0, count: 17755.0
-valid Loss: rc: 1.729 | kl: 0.061 | do: 0.002 | sv: 0.043 | da: 0.004 | Slot error: 23.306, 18.564 | Time: 41.9
-Best loss: 1.7285, AND Save model!
+Train Loss: kl: 0.052 | sv: 0.043 | da: 0.005 | rc: 1.805 | do: 0.003 | kl weight: 0.288 | Time: 65.5
+total: 3094.0, count: 17754.0
+valid Loss: kl: 0.050 | sv: 0.043 | da: 0.004 | rc: 1.786 | do: 0.002 | Slot error: 13.929 | Time: 42.0
+Best loss: 1.7864, AND Save model!
 Epoch 10 (n_layer 1)
-Train Loss: rc: 1.701 | kl: 0.044 | do: 0.002 | sv: 0.042 | da: 0.004 | kl weight: 0.317 | Time: 65.0
-total: 3477.0, count: 17753.0
-valid Loss: rc: 1.693 | kl: 0.046 | do: 0.002 | sv: 0.042 | da: 0.003 | Slot error: 19.585, 15.738 | Time: 42.0
-Best loss: 1.6933, AND Save model!
+Train Loss: kl: 0.041 | sv: 0.042 | da: 0.004 | rc: 1.760 | do: 0.002 | kl weight: 0.317 | Time: 65.4
+total: 2598.0, count: 17753.0
+valid Loss: kl: 0.043 | sv: 0.042 | da: 0.003 | rc: 1.746 | do: 0.002 | Slot error: 11.384 | Time: 41.8
+Best loss: 1.7464, AND Save model!
 Epoch 11 (n_layer 1)
-Train Loss: rc: 1.661 | kl: 0.039 | do: 0.002 | sv: 0.041 | da: 0.003 | kl weight: 0.346 | Time: 64.3
-total: 3201.0, count: 17746.0
-valid Loss: rc: 1.656 | kl: 0.038 | do: 0.002 | sv: 0.041 | da: 0.003 | Slot error: 18.038, 14.093 | Time: 42.1
-Best loss: 1.6562, AND Save model!
+Train Loss: kl: 0.038 | sv: 0.041 | da: 0.003 | rc: 1.723 | do: 0.002 | kl weight: 0.346 | Time: 64.5
+total: 2234.0, count: 17749.0
+valid Loss: kl: 0.037 | sv: 0.041 | da: 0.003 | rc: 1.717 | do: 0.002 | Slot error: 9.623 | Time: 41.8
+Best loss: 1.7166, AND Save model!
 Epoch 12 (n_layer 1)
-Train Loss: rc: 1.629 | kl: 0.031 | do: 0.001 | sv: 0.041 | da: 0.003 | kl weight: 0.374 | Time: 64.8
-total: 2561.0, count: 17754.0
-valid Loss: rc: 1.627 | kl: 0.041 | do: 0.001 | sv: 0.040 | da: 0.002 | Slot error: 14.425, 11.090 | Time: 42.2
-Best loss: 1.6275, AND Save model!
+Train Loss: kl: 0.032 | sv: 0.041 | da: 0.003 | rc: 1.691 | do: 0.001 | kl weight: 0.374 | Time: 65.0
+total: 2099.0, count: 17748.0
+valid Loss: kl: 0.040 | sv: 0.040 | da: 0.002 | rc: 1.686 | do: 0.001 | Slot error: 9.133 | Time: 42.3
+Best loss: 1.6863, AND Save model!
 Epoch 13 (n_layer 1)
-Train Loss: rc: 1.599 | kl: 0.029 | do: 0.001 | sv: 0.040 | da: 0.002 | kl weight: 0.403 | Time: 64.7
-total: 2355.0, count: 17740.0
-valid Loss: rc: 1.614 | kl: 0.029 | do: 0.001 | sv: 0.039 | da: 0.002 | Slot error: 13.275, 10.118 | Time: 42.0
-Best loss: 1.6137, AND Save model!
+Train Loss: kl: 0.028 | sv: 0.040 | da: 0.002 | rc: 1.667 | do: 0.001 | kl weight: 0.403 | Time: 64.9
+total: 1842.0, count: 17745.0
+valid Loss: kl: 0.028 | sv: 0.039 | da: 0.002 | rc: 1.671 | do: 0.001 | Slot error: 7.737 | Time: 41.8
+Best loss: 1.6706, AND Save model!
 Epoch 14 (n_layer 1)
-Train Loss: rc: 1.574 | kl: 0.025 | do: 0.001 | sv: 0.039 | da: 0.002 | kl weight: 0.432 | Time: 64.5
-total: 2063.0, count: 17743.0
-valid Loss: rc: 1.589 | kl: 0.034 | do: 0.001 | sv: 0.038 | da: 0.002 | Slot error: 11.627, 8.809 | Time: 42.4
-Best loss: 1.5887, AND Save model!
+Train Loss: kl: 0.027 | sv: 0.039 | da: 0.002 | rc: 1.646 | do: 0.001 | kl weight: 0.432 | Time: 64.9
+total: 1733.0, count: 17744.0
+valid Loss: kl: 0.031 | sv: 0.039 | da: 0.002 | rc: 1.649 | do: 0.001 | Slot error: 7.236 | Time: 42.4
+Best loss: 1.6490, AND Save model!
 Epoch 15 (n_layer 1)
-Train Loss: rc: 1.555 | kl: 0.026 | do: 0.001 | sv: 0.038 | da: 0.002 | kl weight: 0.461 | Time: 64.9
-total: 1795.0, count: 17754.0
-valid Loss: rc: 1.577 | kl: 0.029 | do: 0.001 | sv: 0.038 | da: 0.002 | Slot error: 10.110, 7.508 | Time: 42.0
-Best loss: 1.5767, AND Save model!
+Train Loss: kl: 0.024 | sv: 0.038 | da: 0.002 | rc: 1.625 | do: 0.001 | kl weight: 0.461 | Time: 65.8
+total: 1535.0, count: 17749.0
+valid Loss: kl: 0.028 | sv: 0.038 | da: 0.002 | rc: 1.626 | do: 0.001 | Slot error: 6.152 | Time: 41.7
+Best loss: 1.6261, AND Save model!
 Epoch 16 (n_layer 1)
-Train Loss: rc: 1.532 | kl: 0.023 | do: 0.001 | sv: 0.037 | da: 0.001 | kl weight: 0.490 | Time: 65.2
-total: 1743.0, count: 17738.0
-valid Loss: rc: 1.561 | kl: 0.030 | do: 0.001 | sv: 0.037 | da: 0.001 | Slot error: 9.826, 7.233 | Time: 42.1
-Best loss: 1.5611, AND Save model!
+Train Loss: kl: 0.025 | sv: 0.037 | da: 0.001 | rc: 1.608 | do: 0.001 | kl weight: 0.490 | Time: 65.5
+total: 1369.0, count: 17753.0
+valid Loss: kl: 0.039 | sv: 0.037 | da: 0.001 | rc: 1.612 | do: 0.001 | Slot error: 5.520 | Time: 41.8
+Best loss: 1.6116, AND Save model!
 Epoch 17 (n_layer 1)
-Train Loss: rc: 1.517 | kl: 0.020 | do: 0.001 | sv: 0.036 | da: 0.001 | kl weight: 0.518 | Time: 64.6
-total: 1594.0, count: 17748.0
-valid Loss: rc: 1.546 | kl: 0.021 | do: 0.001 | sv: 0.036 | da: 0.001 | Slot error: 8.981, 6.508 | Time: 42.0
-Best loss: 1.5459, AND Save model!
+Train Loss: kl: 0.020 | sv: 0.037 | da: 0.001 | rc: 1.594 | do: 0.001 | kl weight: 0.518 | Time: 64.8
+total: 1278.0, count: 17755.0
+valid Loss: kl: 0.022 | sv: 0.036 | da: 0.001 | rc: 1.601 | do: 0.001 | Slot error: 5.041 | Time: 41.9
+Best loss: 1.6014, AND Save model!
 Epoch 18 (n_layer 1)
-Train Loss: rc: 1.500 | kl: 0.019 | do: 0.001 | sv: 0.035 | da: 0.001 | kl weight: 0.547 | Time: 64.8
-total: 1459.0, count: 17743.0
-valid Loss: rc: 1.531 | kl: 0.029 | do: 0.001 | sv: 0.035 | da: 0.001 | Slot error: 8.223, 6.008 | Time: 42.0
-Best loss: 1.5313, AND Save model!
+Train Loss: kl: 0.018 | sv: 0.036 | da: 0.001 | rc: 1.577 | do: 0.001 | kl weight: 0.547 | Time: 65.6
+total: 1217.0, count: 17750.0
+valid Loss: kl: 0.022 | sv: 0.035 | da: 0.001 | rc: 1.594 | do: 0.001 | Slot error: 4.682 | Time: 41.8
+Best loss: 1.5937, AND Save model!
 Epoch 19 (n_layer 1)
-Train Loss: rc: 1.485 | kl: 0.020 | do: 0.001 | sv: 0.035 | da: 0.001 | kl weight: 0.576 | Time: 65.3
-total: 1402.0, count: 17751.0
-valid Loss: rc: 1.524 | kl: 0.024 | do: 0.001 | sv: 0.034 | da: 0.001 | Slot error: 7.898, 5.504 | Time: 42.2
-Best loss: 1.5239, AND Save model!
+Train Loss: kl: 0.019 | sv: 0.035 | da: 0.001 | rc: 1.567 | do: 0.001 | kl weight: 0.576 | Time: 65.4
+total: 1084.0, count: 17747.0
+valid Loss: kl: 0.017 | sv: 0.034 | da: 0.001 | rc: 1.581 | do: 0.001 | Slot error: 4.068 | Time: 41.9
+Best loss: 1.5805, AND Save model!
 Epoch 20 (n_layer 1)
-Train Loss: rc: 1.471 | kl: 0.018 | do: 0.001 | sv: 0.034 | da: 0.001 | kl weight: 0.605 | Time: 65.1
-total: 1406.0, count: 17731.0
-valid Loss: rc: 1.513 | kl: 0.023 | do: 0.001 | sv: 0.033 | da: 0.001 | Slot error: 7.930, 5.595 | Time: 42.0
-Best loss: 1.5126, AND Save model!
+Train Loss: kl: 0.019 | sv: 0.034 | da: 0.001 | rc: 1.552 | do: 0.001 | kl weight: 0.605 | Time: 65.5
+total: 970.0, count: 17742.0
+valid Loss: kl: 0.024 | sv: 0.033 | da: 0.001 | rc: 1.568 | do: 0.001 | Slot error: 3.714 | Time: 41.9
+Best loss: 1.5684, AND Save model!
 Epoch 21 (n_layer 1)
-Train Loss: rc: 1.459 | kl: 0.015 | do: 0.001 | sv: 0.033 | da: 0.001 | kl weight: 0.634 | Time: 64.6
-total: 1336.0, count: 17745.0
-valid Loss: rc: 1.505 | kl: 0.018 | do: 0.000 | sv: 0.032 | da: 0.001 | Slot error: 7.529, 5.382 | Time: 42.0
-Best loss: 1.5055, AND Save model!
+Train Loss: kl: 0.019 | sv: 0.033 | da: 0.001 | rc: 1.542 | do: 0.001 | kl weight: 0.634 | Time: 65.1
+total: 999.0, count: 17744.0
+valid Loss: kl: 0.017 | sv: 0.033 | da: 0.001 | rc: 1.556 | do: 0.000 | Slot error: 3.782 | Time: 42.0
+Best loss: 1.5559, AND Save model!
 Epoch 22 (n_layer 1)
-Train Loss: rc: 1.446 | kl: 0.017 | do: 0.001 | sv: 0.032 | da: 0.001 | kl weight: 0.662 | Time: 65.5
-total: 1172.0, count: 17748.0
-valid Loss: rc: 1.495 | kl: 0.019 | do: 0.000 | sv: 0.031 | da: 0.001 | Slot error: 6.604, 4.502 | Time: 42.0
-Best loss: 1.4946, AND Save model!
+Train Loss: kl: 0.013 | sv: 0.032 | da: 0.001 | rc: 1.532 | do: 0.001 | kl weight: 0.662 | Time: 65.7
+total: 972.0, count: 17749.0
+valid Loss: kl: 0.018 | sv: 0.031 | da: 0.001 | rc: 1.552 | do: 0.000 | Slot error: 3.764 | Time: 41.8
+Best loss: 1.5523, AND Save model!
 Epoch 23 (n_layer 1)
-Train Loss: rc: 1.436 | kl: 0.019 | do: 0.001 | sv: 0.031 | da: 0.001 | kl weight: 0.691 | Time: 64.5
-total: 1169.0, count: 17742.0
-valid Loss: rc: 1.486 | kl: 0.020 | do: 0.000 | sv: 0.031 | da: 0.001 | Slot error: 6.589, 4.351 | Time: 42.0
-Best loss: 1.4860, AND Save model!
+Train Loss: kl: 0.016 | sv: 0.031 | da: 0.001 | rc: 1.520 | do: 0.001 | kl weight: 0.691 | Time: 65.1
+total: 918.0, count: 17754.0
+valid Loss: kl: 0.022 | sv: 0.030 | da: 0.001 | rc: 1.545 | do: 0.000 | Slot error: 3.391 | Time: 42.0
+Best loss: 1.5449, AND Save model!
 Epoch 24 (n_layer 1)
-Train Loss: rc: 1.422 | kl: 0.015 | do: 0.000 | sv: 0.030 | da: 0.001 | kl weight: 0.720 | Time: 64.0
-total: 1079.0, count: 17745.0
-valid Loss: rc: 1.481 | kl: 0.018 | do: 0.000 | sv: 0.029 | da: 0.001 | Slot error: 6.081, 4.074 | Time: 42.1
-Best loss: 1.4813, AND Save model!
+Train Loss: kl: 0.015 | sv: 0.030 | da: 0.001 | rc: 1.511 | do: 0.000 | kl weight: 0.720 | Time: 64.5
+total: 882.0, count: 17743.0
+valid Loss: kl: 0.019 | sv: 0.029 | da: 0.001 | rc: 1.534 | do: 0.000 | Slot error: 3.297 | Time: 41.9
+Best loss: 1.5339, AND Save model!
 Epoch 25 (n_layer 1)
-Train Loss: rc: 1.412 | kl: 0.013 | do: 0.000 | sv: 0.029 | da: 0.001 | kl weight: 0.749 | Time: 64.1
-total: 1061.0, count: 17744.0
-valid Loss: rc: 1.480 | kl: 0.017 | do: 0.000 | sv: 0.028 | da: 0.001 | Slot error: 5.979, 4.159 | Time: 42.0
-Best loss: 1.4796, AND Save model!
+Train Loss: kl: 0.014 | sv: 0.029 | da: 0.001 | rc: 1.502 | do: 0.000 | kl weight: 0.749 | Time: 64.6
+total: 815.0, count: 17739.0
+valid Loss: kl: 0.019 | sv: 0.028 | da: 0.001 | rc: 1.527 | do: 0.000 | Slot error: 3.123 | Time: 42.0
+Best loss: 1.5274, AND Save model!
 Epoch 26 (n_layer 1)
-Train Loss: rc: 1.403 | kl: 0.013 | do: 0.000 | sv: 0.028 | da: 0.001 | kl weight: 0.778 | Time: 64.3
-total: 991.0, count: 17742.0
-valid Loss: rc: 1.475 | kl: 0.015 | do: 0.000 | sv: 0.027 | da: 0.001 | Slot error: 5.586, 3.709 | Time: 42.0
-Best loss: 1.4753, AND Save model!
+Train Loss: kl: 0.017 | sv: 0.028 | da: 0.001 | rc: 1.496 | do: 0.000 | kl weight: 0.778 | Time: 64.4
+total: 832.0, count: 17741.0
+valid Loss: kl: 0.016 | sv: 0.028 | da: 0.001 | rc: 1.523 | do: 0.001 | Slot error: 3.100 | Time: 41.8
+Best loss: 1.5234, AND Save model!
 Epoch 27 (n_layer 1)
-Train Loss: rc: 1.396 | kl: 0.018 | do: 0.000 | sv: 0.027 | da: 0.001 | kl weight: 0.806 | Time: 64.6
-total: 911.0, count: 17753.0
-valid Loss: rc: 1.464 | kl: 0.014 | do: 0.000 | sv: 0.027 | da: 0.000 | Slot error: 5.132, 3.290 | Time: 41.9
-Best loss: 1.4640, AND Save model!
+Train Loss: kl: 0.015 | sv: 0.027 | da: 0.001 | rc: 1.488 | do: 0.000 | kl weight: 0.806 | Time: 65.1
+total: 781.0, count: 17758.0
+valid Loss: kl: 0.018 | sv: 0.027 | da: 0.000 | rc: 1.513 | do: 0.000 | Slot error: 2.911 | Time: 41.8
+Best loss: 1.5131, AND Save model!
 Epoch 28 (n_layer 1)
-Train Loss: rc: 1.387 | kl: 0.012 | do: 0.000 | sv: 0.026 | da: 0.000 | kl weight: 0.835 | Time: 64.6
-total: 958.0, count: 17741.0
-valid Loss: rc: 1.457 | kl: 0.014 | do: 0.000 | sv: 0.026 | da: 0.000 | Slot error: 5.400, 3.692 | Time: 42.0
-Best loss: 1.4574, AND Save model!
+Train Loss: kl: 0.017 | sv: 0.026 | da: 0.000 | rc: 1.482 | do: 0.000 | kl weight: 0.835 | Time: 65.0
+total: 844.0, count: 17748.0
+valid Loss: kl: 0.015 | sv: 0.026 | da: 0.000 | rc: 1.508 | do: 0.000 | Slot error: 3.099 | Time: 41.9
+Best loss: 1.5076, AND Save model!
 Epoch 29 (n_layer 1)
-Train Loss: rc: 1.376 | kl: 0.016 | do: 0.000 | sv: 0.025 | da: 0.000 | kl weight: 0.864 | Time: 64.8
-total: 1074.0, count: 17740.0
-valid Loss: rc: 1.457 | kl: 0.017 | do: 0.000 | sv: 0.025 | da: 0.000 | Slot error: 6.054, 3.929 | Time: 42.0
-Best loss: 1.4571, AND Save model!
+Train Loss: kl: 0.012 | sv: 0.025 | da: 0.000 | rc: 1.471 | do: 0.000 | kl weight: 0.864 | Time: 65.2
+total: 807.0, count: 17734.0
+valid Loss: kl: 0.016 | sv: 0.025 | da: 0.000 | rc: 1.506 | do: 0.000 | Slot error: 2.972 | Time: 41.8
+Best loss: 1.5059, AND Save model!
 Epoch 30 (n_layer 1)
-Train Loss: rc: 1.369 | kl: 0.010 | do: 0.000 | sv: 0.024 | da: 0.000 | kl weight: 0.893 | Time: 63.8
-total: 1017.0, count: 17745.0
-valid Loss: rc: 1.452 | kl: 0.011 | do: 0.000 | sv: 0.023 | da: 0.000 | Slot error: 5.731, 3.787 | Time: 42.1
-Best loss: 1.4518, AND Save model!
+Train Loss: kl: 0.011 | sv: 0.024 | da: 0.000 | rc: 1.464 | do: 0.000 | kl weight: 0.893 | Time: 64.3
+total: 733.0, count: 17741.0
+valid Loss: kl: 0.016 | sv: 0.024 | da: 0.000 | rc: 1.501 | do: 0.000 | Slot error: 2.615 | Time: 42.0
+Best loss: 1.5007, AND Save model!
 Epoch 31 (n_layer 1)
-Train Loss: rc: 1.362 | kl: 0.015 | do: 0.000 | sv: 0.023 | da: 0.000 | kl weight: 0.922 | Time: 64.3
-total: 957.0, count: 17746.0
-valid Loss: rc: 1.449 | kl: 0.012 | do: 0.000 | sv: 0.023 | da: 0.000 | Slot error: 5.393, 3.488 | Time: 42.2
-Best loss: 1.4486, AND Save model!
+Train Loss: kl: 0.013 | sv: 0.023 | da: 0.000 | rc: 1.457 | do: 0.000 | kl weight: 0.922 | Time: 64.8
+total: 680.0, count: 17746.0
+valid Loss: kl: 0.017 | sv: 0.023 | da: 0.000 | rc: 1.489 | do: 0.000 | Slot error: 2.384 | Time: 42.0
+Best loss: 1.4894, AND Save model!
 Epoch 32 (n_layer 1)
-Train Loss: rc: 1.354 | kl: 0.011 | do: 0.000 | sv: 0.022 | da: 0.000 | kl weight: 0.950 | Time: 64.9
-total: 854.0, count: 17750.0
-valid Loss: rc: 1.440 | kl: 0.012 | do: 0.000 | sv: 0.022 | da: 0.000 | Slot error: 4.811, 3.115 | Time: 42.0
-Best loss: 1.4400, AND Save model!
+Train Loss: kl: 0.012 | sv: 0.022 | da: 0.000 | rc: 1.454 | do: 0.000 | kl weight: 0.950 | Time: 65.3
+total: 712.0, count: 17746.0
+valid Loss: kl: 0.012 | sv: 0.022 | da: 0.000 | rc: 1.488 | do: 0.000 | Slot error: 2.451 | Time: 41.7
+Best loss: 1.4879, AND Save model!
 Epoch 33 (n_layer 1)
-Train Loss: rc: 1.347 | kl: 0.014 | do: 0.000 | sv: 0.022 | da: 0.000 | kl weight: 0.979 | Time: 64.4
-total: 884.0, count: 17740.0
-valid Loss: rc: 1.440 | kl: 0.016 | do: 0.000 | sv: 0.021 | da: 0.000 | Slot error: 4.983, 3.258 | Time: 41.8
+Train Loss: kl: 0.014 | sv: 0.022 | da: 0.000 | rc: 1.446 | do: 0.000 | kl weight: 0.979 | Time: 64.6
+total: 646.0, count: 17733.0
+valid Loss: kl: 0.015 | sv: 0.022 | da: 0.000 | rc: 1.486 | do: 0.000 | Slot error: 2.126 | Time: 41.8
+Best loss: 1.4860, AND Save model!
 Epoch 34 (n_layer 1)
-Train Loss: rc: 1.341 | kl: 0.011 | do: 0.000 | sv: 0.021 | da: 0.000 | kl weight: 1.000 | Time: 64.2
-total: 781.0, count: 17743.0
-valid Loss: rc: 1.437 | kl: 0.015 | do: 0.000 | sv: 0.020 | da: 0.000 | Slot error: 4.402, 2.801 | Time: 42.0
-Best loss: 1.4369, AND Save model!
+Train Loss: kl: 0.010 | sv: 0.021 | da: 0.000 | rc: 1.440 | do: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 654.0, count: 17739.0
+valid Loss: kl: 0.013 | sv: 0.021 | da: 0.000 | rc: 1.482 | do: 0.000 | Slot error: 2.486 | Time: 41.7
+Best loss: 1.4817, AND Save model!
 Epoch 35 (n_layer 1)
-Train Loss: rc: 1.335 | kl: 0.010 | do: 0.000 | sv: 0.020 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 817.0, count: 17742.0
-valid Loss: rc: 1.438 | kl: 0.015 | do: 0.000 | sv: 0.019 | da: 0.000 | Slot error: 4.605, 2.891 | Time: 42.0
+Train Loss: kl: 0.012 | sv: 0.020 | da: 0.000 | rc: 1.434 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 621.0, count: 17743.0
+valid Loss: kl: 0.012 | sv: 0.020 | da: 0.000 | rc: 1.475 | do: 0.000 | Slot error: 2.221 | Time: 41.9
+Best loss: 1.4754, AND Save model!
 Epoch 36 (n_layer 1)
-Train Loss: rc: 1.325 | kl: 0.012 | do: 0.000 | sv: 0.019 | da: 0.000 | kl weight: 1.000 | Time: 63.9
-total: 738.0, count: 17739.0
-valid Loss: rc: 1.431 | kl: 0.014 | do: 0.000 | sv: 0.019 | da: 0.000 | Slot error: 4.160, 2.644 | Time: 45.6
-Best loss: 1.4314, AND Save model!
+Train Loss: kl: 0.010 | sv: 0.019 | da: 0.000 | rc: 1.429 | do: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 665.0, count: 17743.0
+valid Loss: kl: 0.015 | sv: 0.019 | da: 0.000 | rc: 1.469 | do: 0.000 | Slot error: 2.333 | Time: 41.6
+Best loss: 1.4690, AND Save model!
 Epoch 37 (n_layer 1)
-Train Loss: rc: 1.320 | kl: 0.010 | do: 0.000 | sv: 0.018 | da: 0.000 | kl weight: 1.000 | Time: 69.5
-total: 764.0, count: 17732.0
-valid Loss: rc: 1.426 | kl: 0.010 | do: 0.000 | sv: 0.018 | da: 0.000 | Slot error: 4.309, 2.724 | Time: 45.2
-Best loss: 1.4263, AND Save model!
+Train Loss: kl: 0.009 | sv: 0.018 | da: 0.000 | rc: 1.424 | do: 0.000 | kl weight: 1.000 | Time: 65.3
+total: 617.0, count: 17732.0
+valid Loss: kl: 0.012 | sv: 0.018 | da: 0.000 | rc: 1.467 | do: 0.000 | Slot error: 2.092 | Time: 42.0
+Best loss: 1.4670, AND Save model!
 Epoch 38 (n_layer 1)
-Train Loss: rc: 1.314 | kl: 0.012 | do: 0.000 | sv: 0.017 | da: 0.000 | kl weight: 1.000 | Time: 67.7
-total: 727.0, count: 17745.0
-valid Loss: rc: 1.423 | kl: 0.013 | do: 0.000 | sv: 0.017 | da: 0.000 | Slot error: 4.097, 2.339 | Time: 46.4
-Best loss: 1.4234, AND Save model!
+Train Loss: kl: 0.011 | sv: 0.018 | da: 0.000 | rc: 1.418 | do: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 593.0, count: 17731.0
+valid Loss: kl: 0.010 | sv: 0.018 | da: 0.000 | rc: 1.466 | do: 0.000 | Slot error: 1.946 | Time: 41.8
+Best loss: 1.4659, AND Save model!
 Epoch 39 (n_layer 1)
-Train Loss: rc: 1.308 | kl: 0.010 | do: 0.000 | sv: 0.017 | da: 0.000 | kl weight: 1.000 | Time: 66.7
-total: 775.0, count: 17743.0
-valid Loss: rc: 1.416 | kl: 0.018 | do: 0.000 | sv: 0.017 | da: 0.000 | Slot error: 4.368, 2.779 | Time: 42.9
-Best loss: 1.4155, AND Save model!
+Train Loss: kl: 0.009 | sv: 0.017 | da: 0.000 | rc: 1.413 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 618.0, count: 17738.0
+valid Loss: kl: 0.011 | sv: 0.017 | da: 0.000 | rc: 1.465 | do: 0.000 | Slot error: 2.063 | Time: 41.8
+Best loss: 1.4650, AND Save model!
 Epoch 40 (n_layer 1)
-Train Loss: rc: 1.304 | kl: 0.010 | do: 0.000 | sv: 0.016 | da: 0.000 | kl weight: 1.000 | Time: 67.4
-total: 807.0, count: 17729.0
-valid Loss: rc: 1.428 | kl: 0.011 | do: 0.000 | sv: 0.016 | da: 0.000 | Slot error: 4.552, 2.865 | Time: 44.6
+Train Loss: kl: 0.012 | sv: 0.016 | da: 0.000 | rc: 1.409 | do: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 637.0, count: 17744.0
+valid Loss: kl: 0.013 | sv: 0.016 | da: 0.000 | rc: 1.457 | do: 0.000 | Slot error: 2.034 | Time: 41.8
+Best loss: 1.4574, AND Save model!
 Epoch 41 (n_layer 1)
-Train Loss: rc: 1.297 | kl: 0.012 | do: 0.000 | sv: 0.015 | da: 0.000 | kl weight: 1.000 | Time: 67.2
-total: 792.0, count: 17740.0
-valid Loss: rc: 1.417 | kl: 0.016 | do: 0.000 | sv: 0.015 | da: 0.000 | Slot error: 4.464, 2.632 | Time: 42.0
+Train Loss: kl: 0.011 | sv: 0.016 | da: 0.000 | rc: 1.406 | do: 0.000 | kl weight: 1.000 | Time: 64.2
+total: 610.0, count: 17749.0
+valid Loss: kl: 0.010 | sv: 0.015 | da: 0.000 | rc: 1.460 | do: 0.000 | Slot error: 2.118 | Time: 41.9
 Epoch 42 (n_layer 1)
-Train Loss: rc: 1.292 | kl: 0.010 | do: 0.000 | sv: 0.015 | da: 0.000 | kl weight: 1.000 | Time: 64.7
-total: 758.0, count: 17738.0
-valid Loss: rc: 1.417 | kl: 0.011 | do: 0.000 | sv: 0.015 | da: 0.000 | Slot error: 4.273, 2.537 | Time: 44.0
+Train Loss: kl: 0.010 | sv: 0.015 | da: 0.000 | rc: 1.399 | do: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 600.0, count: 17738.0
+valid Loss: kl: 0.013 | sv: 0.015 | da: 0.000 | rc: 1.454 | do: 0.000 | Slot error: 2.114 | Time: 42.0
+Best loss: 1.4543, AND Save model!
 Epoch 43 (n_layer 1)
-Train Loss: rc: 1.286 | kl: 0.013 | do: 0.000 | sv: 0.014 | da: 0.000 | kl weight: 1.000 | Time: 66.0
-total: 735.0, count: 17744.0
-valid Loss: rc: 1.419 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | Slot error: 4.142, 2.564 | Time: 42.0
+Train Loss: kl: 0.012 | sv: 0.014 | da: 0.000 | rc: 1.398 | do: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 569.0, count: 17745.0
+valid Loss: kl: 0.012 | sv: 0.014 | da: 0.000 | rc: 1.449 | do: 0.000 | Slot error: 1.871 | Time: 41.8
+Best loss: 1.4490, AND Save model!
 Epoch 44 (n_layer 1)
-Train Loss: rc: 1.281 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | kl weight: 1.000 | Time: 65.7
-total: 737.0, count: 17741.0
-valid Loss: rc: 1.413 | kl: 0.010 | do: 0.000 | sv: 0.014 | da: 0.000 | Slot error: 4.154, 2.508 | Time: 42.0
-Best loss: 1.4130, AND Save model!
+Train Loss: kl: 0.010 | sv: 0.014 | da: 0.000 | rc: 1.391 | do: 0.000 | kl weight: 1.000 | Time: 65.1
+total: 528.0, count: 17743.0
+valid Loss: kl: 0.013 | sv: 0.014 | da: 0.000 | rc: 1.446 | do: 0.000 | Slot error: 1.753 | Time: 41.9
+Best loss: 1.4456, AND Save model!
 Epoch 45 (n_layer 1)
-Train Loss: rc: 1.275 | kl: 0.010 | do: 0.000 | sv: 0.013 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 712.0, count: 17749.0
-valid Loss: rc: 1.413 | kl: 0.011 | do: 0.000 | sv: 0.013 | da: 0.000 | Slot error: 4.011, 2.406 | Time: 42.2
-Best loss: 1.4126, AND Save model!
+Train Loss: kl: 0.013 | sv: 0.013 | da: 0.000 | rc: 1.386 | do: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 538.0, count: 17747.0
+valid Loss: kl: 0.013 | sv: 0.013 | da: 0.000 | rc: 1.445 | do: 0.000 | Slot error: 1.752 | Time: 42.0
+Best loss: 1.4448, AND Save model!
 Epoch 46 (n_layer 1)
-Train Loss: rc: 1.272 | kl: 0.009 | do: 0.000 | sv: 0.013 | da: 0.000 | kl weight: 1.000 | Time: 64.9
-total: 704.0, count: 17750.0
-valid Loss: rc: 1.412 | kl: 0.012 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 3.966, 2.366 | Time: 42.1
-Best loss: 1.4119, AND Save model!
+Train Loss: kl: 0.009 | sv: 0.013 | da: 0.000 | rc: 1.386 | do: 0.000 | kl weight: 1.000 | Time: 65.4
+total: 516.0, count: 17746.0
+valid Loss: kl: 0.013 | sv: 0.013 | da: 0.000 | rc: 1.437 | do: 0.000 | Slot error: 1.657 | Time: 41.9
+Best loss: 1.4375, AND Save model!
 Epoch 47 (n_layer 1)
-Train Loss: rc: 1.263 | kl: 0.013 | do: 0.000 | sv: 0.012 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 728.0, count: 17728.0
-valid Loss: rc: 1.409 | kl: 0.015 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 4.106, 2.657 | Time: 42.3
-Best loss: 1.4086, AND Save model!
+Train Loss: kl: 0.010 | sv: 0.012 | da: 0.000 | rc: 1.380 | do: 0.000 | kl weight: 1.000 | Time: 64.1
+total: 580.0, count: 17738.0
+valid Loss: kl: 0.010 | sv: 0.012 | da: 0.000 | rc: 1.439 | do: 0.000 | Slot error: 1.928 | Time: 41.9
 Epoch 48 (n_layer 1)
-Train Loss: rc: 1.261 | kl: 0.009 | do: 0.000 | sv: 0.012 | da: 0.000 | kl weight: 1.000 | Time: 64.2
-total: 668.0, count: 17744.0
-valid Loss: rc: 1.407 | kl: 0.010 | do: 0.000 | sv: 0.012 | da: 0.000 | Slot error: 3.765, 2.344 | Time: 41.9
-Best loss: 1.4074, AND Save model!
+Train Loss: kl: 0.009 | sv: 0.012 | da: 0.000 | rc: 1.376 | do: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 543.0, count: 17746.0
+valid Loss: kl: 0.010 | sv: 0.012 | da: 0.000 | rc: 1.437 | do: 0.000 | Slot error: 1.786 | Time: 41.9
+Best loss: 1.4372, AND Save model!
 Epoch 49 (n_layer 1)
-Train Loss: rc: 1.258 | kl: 0.009 | do: 0.000 | sv: 0.011 | da: 0.000 | kl weight: 1.000 | Time: 64.8
-total: 731.0, count: 17738.0
-valid Loss: rc: 1.410 | kl: 0.011 | do: 0.000 | sv: 0.011 | da: 0.000 | Slot error: 4.121, 2.633 | Time: 42.0
+Train Loss: kl: 0.011 | sv: 0.011 | da: 0.000 | rc: 1.372 | do: 0.000 | kl weight: 1.000 | Time: 65.0
+total: 541.0, count: 17740.0
+valid Loss: kl: 0.016 | sv: 0.011 | da: 0.000 | rc: 1.432 | do: 0.000 | Slot error: 1.702 | Time: 41.9
+Best loss: 1.4325, AND Save model!
 Epoch 50 (n_layer 1)
-Train Loss: rc: 1.252 | kl: 0.009 | do: 0.000 | sv: 0.011 | da: 0.000 | kl weight: 1.000 | Time: 64.8
-total: 719.0, count: 17745.0
-valid Loss: rc: 1.409 | kl: 0.011 | do: 0.000 | sv: 0.011 | da: 0.000 | Slot error: 4.052, 2.508 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.011 | da: 0.000 | rc: 1.368 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 520.0, count: 17748.0
+valid Loss: kl: 0.009 | sv: 0.011 | da: 0.000 | rc: 1.431 | do: 0.000 | Slot error: 1.741 | Time: 41.8
+Best loss: 1.4311, AND Save model!
 Epoch 51 (n_layer 1)
-Train Loss: rc: 1.247 | kl: 0.009 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.7
-total: 668.0, count: 17738.0
-valid Loss: rc: 1.404 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.766, 2.323 | Time: 42.0
-Best loss: 1.4039, AND Save model!
+Train Loss: kl: 0.007 | sv: 0.010 | da: 0.000 | rc: 1.366 | do: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 522.0, count: 17734.0
+valid Loss: kl: 0.010 | sv: 0.010 | da: 0.000 | rc: 1.427 | do: 0.000 | Slot error: 1.613 | Time: 41.8
+Best loss: 1.4275, AND Save model!
 Epoch 52 (n_layer 1)
-Train Loss: rc: 1.244 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.1
-total: 654.0, count: 17746.0
-valid Loss: rc: 1.410 | kl: 0.009 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.685, 2.130 | Time: 41.9
+Train Loss: kl: 0.013 | sv: 0.010 | da: 0.000 | rc: 1.363 | do: 0.000 | kl weight: 1.000 | Time: 64.4
+total: 509.0, count: 17743.0
+valid Loss: kl: 0.010 | sv: 0.010 | da: 0.000 | rc: 1.430 | do: 0.000 | Slot error: 1.606 | Time: 41.9
 Epoch 53 (n_layer 1)
-Train Loss: rc: 1.242 | kl: 0.010 | do: 0.000 | sv: 0.010 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 678.0, count: 17738.0
-valid Loss: rc: 1.409 | kl: 0.013 | do: 0.000 | sv: 0.010 | da: 0.000 | Slot error: 3.822, 2.283 | Time: 42.2
+Train Loss: kl: 0.011 | sv: 0.010 | da: 0.000 | rc: 1.360 | do: 0.000 | kl weight: 1.000 | Time: 65.1
+total: 511.0, count: 17740.0
+valid Loss: kl: 0.013 | sv: 0.010 | da: 0.000 | rc: 1.426 | do: 0.000 | Slot error: 1.573 | Time: 41.9
+Best loss: 1.4258, AND Save model!
 Epoch 54 (n_layer 1)
-Train Loss: rc: 1.237 | kl: 0.010 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.1
-total: 601.0, count: 17735.0
-valid Loss: rc: 1.409 | kl: 0.010 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.389, 1.833 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.010 | da: 0.000 | rc: 1.356 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 488.0, count: 17736.0
+valid Loss: kl: 0.009 | sv: 0.009 | da: 0.000 | rc: 1.422 | do: 0.000 | Slot error: 1.517 | Time: 41.8
+Best loss: 1.4215, AND Save model!
 Epoch 55 (n_layer 1)
-Train Loss: rc: 1.233 | kl: 0.008 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 671.0, count: 17735.0
-valid Loss: rc: 1.413 | kl: 0.009 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.783, 2.176 | Time: 42.1
+Train Loss: kl: 0.008 | sv: 0.009 | da: 0.000 | rc: 1.353 | do: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 537.0, count: 17731.0
+valid Loss: kl: 0.008 | sv: 0.009 | da: 0.000 | rc: 1.420 | do: 0.000 | Slot error: 1.681 | Time: 41.6
+Best loss: 1.4200, AND Save model!
 Epoch 56 (n_layer 1)
-Train Loss: rc: 1.227 | kl: 0.011 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 577.0, count: 17726.0
-valid Loss: rc: 1.401 | kl: 0.013 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.255, 1.929 | Time: 42.2
-Best loss: 1.4012, AND Save model!
+Train Loss: kl: 0.010 | sv: 0.009 | da: 0.000 | rc: 1.350 | do: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 511.0, count: 17741.0
+valid Loss: kl: 0.011 | sv: 0.009 | da: 0.000 | rc: 1.419 | do: 0.000 | Slot error: 1.544 | Time: 41.8
+Best loss: 1.4193, AND Save model!
 Epoch 57 (n_layer 1)
-Train Loss: rc: 1.221 | kl: 0.012 | do: 0.000 | sv: 0.009 | da: 0.000 | kl weight: 1.000 | Time: 64.2
-total: 633.0, count: 17742.0
-valid Loss: rc: 1.407 | kl: 0.009 | do: 0.000 | sv: 0.009 | da: 0.000 | Slot error: 3.568, 2.108 | Time: 41.9
+Train Loss: kl: 0.011 | sv: 0.009 | da: 0.000 | rc: 1.346 | do: 0.000 | kl weight: 1.000 | Time: 64.4
+total: 492.0, count: 17749.0
+valid Loss: kl: 0.011 | sv: 0.009 | da: 0.000 | rc: 1.417 | do: 0.000 | Slot error: 1.487 | Time: 41.8
+Best loss: 1.4170, AND Save model!
 Epoch 58 (n_layer 1)
-Train Loss: rc: 1.222 | kl: 0.007 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.3
-total: 636.0, count: 17741.0
-valid Loss: rc: 1.407 | kl: 0.010 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.585, 2.080 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.008 | da: 0.000 | rc: 1.344 | do: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 514.0, count: 17744.0
+valid Loss: kl: 0.009 | sv: 0.008 | da: 0.000 | rc: 1.415 | do: 0.000 | Slot error: 1.679 | Time: 41.7
+Best loss: 1.4151, AND Save model!
 Epoch 59 (n_layer 1)
-Train Loss: rc: 1.217 | kl: 0.010 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 575.0, count: 17742.0
-valid Loss: rc: 1.406 | kl: 0.014 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.241, 1.973 | Time: 42.1
+Train Loss: kl: 0.008 | sv: 0.008 | da: 0.000 | rc: 1.341 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 517.0, count: 17740.0
+valid Loss: kl: 0.009 | sv: 0.008 | da: 0.000 | rc: 1.412 | do: 0.000 | Slot error: 1.629 | Time: 41.9
+Best loss: 1.4123, AND Save model!
 Epoch 60 (n_layer 1)
-Train Loss: rc: 1.214 | kl: 0.011 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.4
-total: 644.0, count: 17739.0
-valid Loss: rc: 1.403 | kl: 0.020 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.630, 2.120 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.008 | da: 0.000 | rc: 1.340 | do: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 485.0, count: 17738.0
+valid Loss: kl: 0.014 | sv: 0.008 | da: 0.000 | rc: 1.411 | do: 0.000 | Slot error: 1.528 | Time: 41.9
+Best loss: 1.4110, AND Save model!
 Epoch 61 (n_layer 1)
-Train Loss: rc: 1.209 | kl: 0.012 | do: 0.000 | sv: 0.008 | da: 0.000 | kl weight: 1.000 | Time: 64.9
-total: 588.0, count: 17747.0
-valid Loss: rc: 1.404 | kl: 0.011 | do: 0.000 | sv: 0.008 | da: 0.000 | Slot error: 3.313, 1.792 | Time: 42.1
+Train Loss: kl: 0.010 | sv: 0.008 | da: 0.000 | rc: 1.335 | do: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 522.0, count: 17742.0
+valid Loss: kl: 0.015 | sv: 0.007 | da: 0.000 | rc: 1.413 | do: 0.000 | Slot error: 1.561 | Time: 41.6
 Epoch 62 (n_layer 1)
-Train Loss: rc: 1.204 | kl: 0.007 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 649.0, count: 17732.0
-valid Loss: rc: 1.407 | kl: 0.012 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.660, 2.047 | Time: 42.0
+Train Loss: kl: 0.008 | sv: 0.007 | da: 0.000 | rc: 1.334 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 528.0, count: 17743.0
+valid Loss: kl: 0.011 | sv: 0.007 | da: 0.000 | rc: 1.410 | do: 0.000 | Slot error: 1.595 | Time: 41.9
+Best loss: 1.4099, AND Save model!
 Epoch 63 (n_layer 1)
-Train Loss: rc: 1.203 | kl: 0.009 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.3
-total: 662.0, count: 17746.0
-valid Loss: rc: 1.406 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.730, 2.158 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.007 | da: 0.000 | rc: 1.330 | do: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 505.0, count: 17735.0
+valid Loss: kl: 0.015 | sv: 0.007 | da: 0.000 | rc: 1.409 | do: 0.000 | Slot error: 1.505 | Time: 41.7
+Best loss: 1.4090, AND Save model!
 Epoch 64 (n_layer 1)
-Train Loss: rc: 1.198 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 669.0, count: 17745.0
-valid Loss: rc: 1.409 | kl: 0.014 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.770, 2.282 | Time: 42.2
+Train Loss: kl: 0.009 | sv: 0.007 | da: 0.000 | rc: 1.327 | do: 0.000 | kl weight: 1.000 | Time: 64.6
+total: 484.0, count: 17744.0
+valid Loss: kl: 0.009 | sv: 0.007 | da: 0.000 | rc: 1.408 | do: 0.000 | Slot error: 1.431 | Time: 41.8
+Best loss: 1.4081, AND Save model!
 Epoch 65 (n_layer 1)
-Train Loss: rc: 1.193 | kl: 0.011 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 673.0, count: 17744.0
-valid Loss: rc: 1.408 | kl: 0.010 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.793, 2.356 | Time: 42.2
+Train Loss: kl: 0.009 | sv: 0.007 | da: 0.000 | rc: 1.326 | do: 0.000 | kl weight: 1.000 | Time: 65.0
+total: 500.0, count: 17745.0
+valid Loss: kl: 0.011 | sv: 0.007 | da: 0.000 | rc: 1.406 | do: 0.000 | Slot error: 1.550 | Time: 41.9
+Best loss: 1.4065, AND Save model!
 Epoch 66 (n_layer 1)
-Train Loss: rc: 1.193 | kl: 0.008 | do: 0.000 | sv: 0.007 | da: 0.000 | kl weight: 1.000 | Time: 66.0
-total: 631.0, count: 17737.0
-valid Loss: rc: 1.407 | kl: 0.008 | do: 0.000 | sv: 0.007 | da: 0.000 | Slot error: 3.558, 2.193 | Time: 42.0
+Train Loss: kl: 0.009 | sv: 0.006 | da: 0.000 | rc: 1.323 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 496.0, count: 17739.0
+valid Loss: kl: 0.008 | sv: 0.007 | da: 0.000 | rc: 1.406 | do: 0.000 | Slot error: 1.528 | Time: 41.7
+Best loss: 1.4062, AND Save model!
 Epoch 67 (n_layer 1)
-Train Loss: rc: 1.188 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.7
-total: 555.0, count: 17740.0
-valid Loss: rc: 1.403 | kl: 0.013 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.129, 1.883 | Time: 42.2
+Train Loss: kl: 0.009 | sv: 0.006 | da: 0.000 | rc: 1.323 | do: 0.000 | kl weight: 1.000 | Time: 64.3
+total: 489.0, count: 17751.0
+valid Loss: kl: 0.014 | sv: 0.007 | da: 0.000 | rc: 1.403 | do: 0.000 | Slot error: 1.499 | Time: 41.8
+Best loss: 1.4030, AND Save model!
 Epoch 68 (n_layer 1)
-Train Loss: rc: 1.184 | kl: 0.013 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 65.1
-total: 578.0, count: 17744.0
-valid Loss: rc: 1.406 | kl: 0.012 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.257, 1.854 | Time: 42.1
+Train Loss: kl: 0.008 | sv: 0.006 | da: 0.000 | rc: 1.318 | do: 0.000 | kl weight: 1.000 | Time: 65.1
+total: 428.0, count: 17748.0
+valid Loss: kl: 0.011 | sv: 0.006 | da: 0.000 | rc: 1.403 | do: 0.000 | Slot error: 1.268 | Time: 41.8
+Best loss: 1.4026, AND Save model!
 Epoch 69 (n_layer 1)
-Train Loss: rc: 1.182 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.3
-total: 607.0, count: 17740.0
-valid Loss: rc: 1.409 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.422, 2.012 | Time: 42.4
+Train Loss: kl: 0.011 | sv: 0.006 | da: 0.000 | rc: 1.319 | do: 0.000 | kl weight: 1.000 | Time: 64.7
+total: 504.0, count: 17746.0
+valid Loss: kl: 0.008 | sv: 0.006 | da: 0.000 | rc: 1.402 | do: 0.000 | Slot error: 1.431 | Time: 41.9
+Best loss: 1.4023, AND Save model!
 Epoch 70 (n_layer 1)
-Train Loss: rc: 1.178 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 65.5
-total: 556.0, count: 17739.0
-valid Loss: rc: 1.409 | kl: 0.011 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.134, 1.798 | Time: 42.2
+Train Loss: kl: 0.009 | sv: 0.006 | da: 0.000 | rc: 1.315 | do: 0.000 | kl weight: 1.000 | Time: 65.7
+total: 462.0, count: 17736.0
+valid Loss: kl: 0.012 | sv: 0.006 | da: 0.000 | rc: 1.398 | do: 0.000 | Slot error: 1.263 | Time: 42.0
+Best loss: 1.3977, AND Save model!
 Epoch 71 (n_layer 1)
-Train Loss: rc: 1.175 | kl: 0.009 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.7
-total: 592.0, count: 17737.0
-valid Loss: rc: 1.412 | kl: 0.014 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.338, 2.001 | Time: 42.1
+Train Loss: kl: 0.009 | sv: 0.006 | da: 0.000 | rc: 1.313 | do: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 464.0, count: 17739.0
+valid Loss: kl: 0.012 | sv: 0.006 | da: 0.000 | rc: 1.400 | do: 0.000 | Slot error: 1.404 | Time: 41.8
 Epoch 72 (n_layer 1)
-Train Loss: rc: 1.174 | kl: 0.012 | do: 0.000 | sv: 0.006 | da: 0.000 | kl weight: 1.000 | Time: 64.4
-total: 660.0, count: 17741.0
-valid Loss: rc: 1.412 | kl: 0.010 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.720, 2.238 | Time: 42.0
+Train Loss: kl: 0.008 | sv: 0.006 | da: 0.000 | rc: 1.310 | do: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 494.0, count: 17729.0
+valid Loss: kl: 0.007 | sv: 0.006 | da: 0.000 | rc: 1.394 | do: 0.000 | Slot error: 1.438 | Time: 41.8
+Best loss: 1.3944, AND Save model!
 Epoch 73 (n_layer 1)
-Train Loss: rc: 1.170 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.1
-total: 578.0, count: 17740.0
-valid Loss: rc: 1.409 | kl: 0.008 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.258, 2.012 | Time: 42.0
+Train Loss: kl: 0.009 | sv: 0.005 | da: 0.000 | rc: 1.308 | do: 0.000 | kl weight: 1.000 | Time: 64.5
+total: 455.0, count: 17750.0
+valid Loss: kl: 0.009 | sv: 0.006 | da: 0.000 | rc: 1.396 | do: 0.000 | Slot error: 1.346 | Time: 41.9
 Epoch 74 (n_layer 1)
-Train Loss: rc: 1.167 | kl: 0.011 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.6
-total: 614.0, count: 17734.0
-valid Loss: rc: 1.414 | kl: 0.010 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.462, 1.951 | Time: 42.0
+Train Loss: kl: 0.010 | sv: 0.005 | da: 0.000 | rc: 1.306 | do: 0.000 | kl weight: 1.000 | Time: 64.9
+total: 459.0, count: 17731.0
+valid Loss: kl: 0.011 | sv: 0.006 | da: 0.000 | rc: 1.394 | do: 0.000 | Slot error: 1.455 | Time: 41.8
+Best loss: 1.3936, AND Save model!
 Epoch 75 (n_layer 1)
-Train Loss: rc: 1.164 | kl: 0.011 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.9
-total: 600.0, count: 17728.0
-valid Loss: rc: 1.412 | kl: 0.009 | do: 0.000 | sv: 0.006 | da: 0.000 | Slot error: 3.384, 1.935 | Time: 42.0
+Train Loss: kl: 0.009 | sv: 0.005 | da: 0.000 | rc: 1.303 | do: 0.000 | kl weight: 1.000 | Time: 64.8
+total: 475.0, count: 17734.0
+valid Loss: kl: 0.010 | sv: 0.006 | da: 0.000 | rc: 1.401 | do: 0.000 | Slot error: 1.421 | Time: 41.9
 Epoch 76 (n_layer 1)
-Train Loss: rc: 1.159 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.5
-total: 653.0, count: 17729.0
-valid Loss: rc: 1.412 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.683, 2.183 | Time: 42.2
-Epoch 77 (n_layer 1)
-Train Loss: rc: 1.159 | kl: 0.008 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.4
-total: 646.0, count: 17750.0
-valid Loss: rc: 1.412 | kl: 0.009 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.639, 2.073 | Time: 42.2
-Epoch 78 (n_layer 1)
-Train Loss: rc: 1.156 | kl: 0.009 | do: 0.000 | sv: 0.005 | da: 0.000 | kl weight: 1.000 | Time: 64.9
-total: 606.0, count: 17747.0
-valid Loss: rc: 1.411 | kl: 0.014 | do: 0.000 | sv: 0.005 | da: 0.000 | Slot error: 3.415, 1.950 | Time: 43.4
-Epoch 79 (n_layer 1)
